@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MusicEvolution14 - Animation musicale et décoration intérieure/extérieure pour vos événements. DJ, sonorisation, jeux de lumière et scénographie personnalisée en Basse-Normandie.">
+  <meta name="keywords" content="DJ, animation musicale, décoration événementielle, mariage, anniversaire, Calvados, Normandie">
+  <title>MusicEvolution14 | Animation Musicale & Décoration Événementielle</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpg" alt="MusicEvolution14 Logo">
+        <span>MusicEvolution<span class="text-accent">14</span></span>
+      </a>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Accueil</a></li>
+        <li><a href="prestations.html" class="nav-link">Prestations</a></li>
+        <li><a href="locations.html" class="nav-link">Locations</a></li>
+        <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+        <li><a href="about.html" class="nav-link">Qui sommes-nous</a></li>
+        <li><a href="temoignages.html" class="nav-link">Témoignages</a></li>
+        <li><a href="contact.html" class="nav-link nav-cta"><span class="btn btn-primary">Contact</span></a></li>
+      </ul>
+      
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+        <source src="videos/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="hero-content reveal">
+      <img src="logo.jpg" alt="MusicEvolution14" class="hero-logo">
+      <h1 class="hero-title">
+        <span class="text-gradient">Créons ensemble</span><br>
+        vos moments inoubliables
+      </h1>
+      <p class="hero-subtitle">
+        Animation musicale et décoration événementielle sur mesure. 
+        Transformez vos rêves en réalité avec MusicEvolution14.
+      </p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis</a>
+        <a href="#prestations" class="btn btn-secondary btn-lg">Découvrir nos services</a>
+      </div>
+    </div>
+    
+    <div class="hero-scroll">
+      <div class="hero-scroll-icon"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- Prestations Section -->
+  <section class="section" id="prestations">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Nos Services</span>
+        <h2>Des prestations <span class="text-gradient">sur mesure</span></h2>
+        <p>Découvrez notre gamme complète de services pour faire de votre événement un moment unique et mémorable.</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <!-- Animation Musicale -->
+        <div class="card service-card reveal stagger-1">
+          <div class="card-icon">🎵</div>
+          <h3 class="card-title">Animation Musicale</h3>
+          <p class="card-text">
+            DJ professionnel, sonorisation haute qualité et jeux de lumière spectaculaires. 
+            Nous créons l'ambiance parfaite pour faire danser vos invités toute la nuit.
+          </p>
+          <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+            <li>✓ DJ expérimenté</li>
+            <li>✓ Son professionnel</li>
+            <li>✓ Éclairage dynamique</li>
+            <li>✓ Playlist personnalisée</li>
+          </ul>
+        </div>
+        
+        <!-- Décoration Intérieure -->
+        <div class="card service-card reveal stagger-2">
+          <div class="card-icon">✨</div>
+          <h3 class="card-title">Décoration Intérieure</h3>
+          <p class="card-text">
+            Transformez n'importe quelle salle en un espace féerique. 
+            Arrangements floraux, nappes, housses de chaises et créations thématiques.
+          </p>
+          <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+            <li>✓ Décor thématique</li>
+            <li>✓ Centre de tables</li>
+            <li>✓ Arches décoratives</li>
+            <li>✓ Éclairage d'ambiance</li>
+          </ul>
+        </div>
+        
+        <!-- Décoration Extérieure -->
+        <div class="card service-card reveal stagger-3">
+          <div class="card-icon">🌿</div>
+          <h3 class="card-title">Décoration Extérieure</h3>
+          <p class="card-text">
+            Sublimez vos jardins, terrasses et espaces extérieurs. 
+            Guirlandes lumineuses, spots, lanternes et mises en lumière artistiques.
+          </p>
+          <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+            <li>✓ Illuminations</li>
+            <li>✓ Décor végétal</li>
+            <li>✓ Ambiance nocturne</li>
+            <li>✓ Installation complète</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="text-center mt-xl reveal">
+        <a href="prestations.html" class="btn btn-secondary">Voir toutes nos prestations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Événements Section -->
+  <section class="section" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Pour Qui ?</span>
+        <h2>Pour <span class="text-gradient">quels événements</span> ?</h2>
+        <p>Quel que soit votre événement, nous nous adaptons à vos besoins et à vos envies pour créer une expérience unique.</p>
+      </div>
+      
+      <div class="grid grid-4">
+        <!-- Mariages -->
+        <div class="card event-card reveal stagger-1">
+          <div class="event-card-image">
+            <img src="images/358536994_763506195775581_1722177586522969281_n.jpg" alt="Mariage">
+          </div>
+          <div class="event-card-content">
+            <h4 class="card-title">Mariages</h4>
+            <p class="card-text">Le plus beau jour de votre vie mérite une ambiance exceptionnelle. Musique romantique et déco de rêve.</p>
+          </div>
+        </div>
+        
+        <!-- Anniversaires -->
+        <div class="card event-card reveal stagger-2">
+          <div class="event-card-image">
+            <img src="images/502860448_2892896334245090_475319705922716454_n.jpg" alt="Anniversaire">
+          </div>
+          <div class="event-card-content">
+            <h4 class="card-title">Anniversaires</h4>
+            <p class="card-text">Célébrez chaque année avec style ! Décor festif et playlist entraînante pour tous les âges.</p>
+          </div>
+        </div>
+        
+        <!-- Soirées Privées -->
+        <div class="card event-card reveal stagger-3">
+          <div class="event-card-image">
+            <img src="images/503173606_2892903777577679_1151030800917129172_n.jpg" alt="Soirée privée">
+          </div>
+          <div class="event-card-content">
+            <h4 class="card-title">Soirées Privées</h4>
+            <p class="card-text">Réunion entre amis, soirée thème ou fête surprise ? Nous créons l'atmosphère parfaite.</p>
+          </div>
+        </div>
+        
+        <!-- Entreprises -->
+        <div class="card event-card reveal stagger-4">
+          <div class="event-card-image">
+            <img src="images/486670200_1237951618331034_7657288755883605121_n.jpg" alt="Événement entreprise">
+          </div>
+          <div class="event-card-content">
+            <h4 class="card-title">Entreprises</h4>
+            <p class="card-text">Séminaires, team building, soirées corporate. Une prestation professionnelle à votre image.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone Géographique -->
+  <section class="section zone-section">
+    <div class="container">
+      <div class="zone-content">
+        <div class="zone-text reveal-left">
+          <span class="subtitle" style="display: block; margin-bottom: var(--space-sm);">Notre Zone</span>
+          <h3>Basés à <span class="text-gradient">Livry</span>, en Basse-Normandie</h3>
+          <p>
+            Installés au cœur du Calvados, nous intervenons dans toute la Basse-Normandie et les régions limitrophes. 
+            Notre équipe se déplace pour transformer vos lieux en espaces magiques, où que vous soyez.
+          </p>
+          <div class="zone-features">
+            <span class="zone-feature">📍 Calvados</span>
+            <span class="zone-feature">📍 Manche</span>
+            <span class="zone-feature">📍 Orne</span>
+            <span class="zone-feature">📍 Eure</span>
+            <span class="zone-feature">📍 Seine-Maritime</span>
+          </div>
+        </div>
+        <div class="zone-map reveal-right">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166417.97665893797!2d-0.5!3d49.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a4596e3d04f47%3A0x40c14484fbcd430!2sCalvados!5e0!3m2!1sfr!2sfr!4v1702000000000!5m2!1sfr!2sfr" 
+            width="100%" 
+            height="100%" 
+            style="border:0; border-radius: var(--radius-lg);" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini Galerie -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Portfolio</span>
+        <h2>Aperçu de nos <span class="text-gradient">réalisations</span></h2>
+        <p>Découvrez quelques-uns des événements que nous avons eu le plaisir d'animer et de décorer.</p>
+      </div>
+      
+      <div class="mini-gallery reveal">
+        <div class="mini-gallery-item">
+          <img src="images/500695294_2891148291086561_3175454071053076445_n.jpg" alt="Réalisation 1">
+        </div>
+        <div class="mini-gallery-item">
+          <img src="images/501307956_2891148161086574_6947751089387842822_n.jpg" alt="Réalisation 2">
+        </div>
+        <div class="mini-gallery-item">
+          <img src="images/487604752_1242883094504553_1655194183820495562_n.jpg" alt="Réalisation 3">
+        </div>
+        <div class="mini-gallery-item">
+          <img src="images/485751387_1234421908684005_357112647473288635_n.jpg" alt="Réalisation 4">
+        </div>
+        <div class="mini-gallery-item">
+          <img src="images/474332099_2767380653463326_819400420326920429_n.jpg" alt="Réalisation 5">
+        </div>
+        <div class="mini-gallery-item">
+          <img src="images/462310784_2677631959104863_9101318473195121617_n.jpg" alt="Réalisation 6">
+        </div>
+      </div>
+      
+      <div class="text-center mt-xl reveal">
+        <a href="galerie.html" class="btn btn-primary">Voir toute la galerie</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section" style="background: var(--surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="subtitle">Avis Clients</span>
+        <h2>Ils nous font <span class="text-gradient">confiance</span></h2>
+      </div>
+      
+      <div class="testimonials-slider reveal">
+        <div class="testimonial-card" id="testimonial-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Une équipe incroyable ! Notre mariage était parfait grâce à MusicEvolution14. 
+            La décoration était à couper le souffle et l'ambiance musicale a fait danser tout le monde jusqu'au bout de la nuit !"
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Marie & Thomas</span>
+            <span class="testimonial-event">Mariage - Juin 2024</span>
+          </div>
+        </div>
+        
+        <div class="testimonial-card hidden" id="testimonial-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Super prestation pour les 50 ans de mon père. Le DJ a su s'adapter à tous les goûts 
+            et la déco était exactement ce que nous voulions. Un grand merci !"
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Sophie L.</span>
+            <span class="testimonial-event">Anniversaire - Mars 2024</span>
+          </div>
+        </div>
+        
+        <div class="testimonial-card hidden" id="testimonial-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Professionnels et à l'écoute. Notre soirée d'entreprise a été un franc succès. 
+            Je recommande vivement pour tout type d'événement !"
+          </p>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Jean-Pierre M.</span>
+            <span class="testimonial-event">Événement Corporate - Décembre 2023</span>
+          </div>
+        </div>
+        
+        <div class="testimonials-nav">
+          <button class="testimonial-dot active" data-index="1"></button>
+          <button class="testimonial-dot" data-index="2"></button>
+          <button class="testimonial-dot" data-index="3"></button>
+        </div>
+      </div>
+      
+      <div class="text-center mt-xl reveal">
+        <a href="temoignages.html" class="btn btn-secondary">Voir tous les témoignages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partenaires -->
+  <section class="partners-section">
+    <div class="container">
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img src="Partenaires/386787465_931558185275509_7642918872400733857_n.jpg" alt="Partenaire 1">
+        </div>
+        <div class="partner-logo">
+          <img src="Partenaires/63082.jpg" alt="Partenaire 2">
+        </div>
+        <div class="partner-logo">
+          <img src="Partenaires/Sans titre.png" alt="Partenaire 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>Prêt à créer des <span class="text-gradient">moments magiques</span> ?</h2>
+        <p>
+          Contactez-nous dès maintenant pour discuter de votre projet. 
+          Nous vous accompagnons de A à Z pour faire de votre événement une réussite totale.
+        </p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis gratuit</a>
+          <a href="tel:+33600000000" class="btn btn-secondary btn-lg">📞 Nous appeler</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo.jpg" alt="MusicEvolution14">
+            <span>MusicEvolution<span class="text-accent">14</span></span>
+          </div>
+          <p>Animation musicale et décoration événementielle sur mesure en Basse-Normandie. Transformez vos rêves en réalité.</p>
+          <div class="social-links">
+            <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Accueil</a></li>
+            <li><a href="prestations.html" class="footer-link">Prestations</a></li>
+            <li><a href="locations.html" class="footer-link">Locations</a></li>
+            <li><a href="galerie.html" class="footer-link">Galerie</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Infos</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">Qui sommes-nous</a></li>
+            <li><a href="temoignages.html" class="footer-link">Témoignages</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li><span class="footer-link">📍 Livry, Calvados (14)</span></li>
+            <li><a href="tel:+33600000000" class="footer-link">📞 06 00 00 00 00</a></li>
+            <li><a href="mailto:contact@musicevolution14.fr" class="footer-link">✉️ contact@musicevolution14.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2024 MusicEvolution14. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

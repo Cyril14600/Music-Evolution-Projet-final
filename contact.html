@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contactez MusicEvolution14 pour un devis gratuit. Animation musicale et décoration événementielle en Normandie.">
+    <title>Contact | MusicEvolution14</title>
+
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="MusicEvolution14 Logo">
+                <span>MusicEvolution<span class="text-accent">14</span></span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="prestations.html" class="nav-link">Prestations</a></li>
+                <li><a href="locations.html" class="nav-link">Locations</a></li>
+                <li><a href="galerie.html" class="nav-link">Galerie</a></li>
+                <li><a href="about.html" class="nav-link">Qui sommes-nous</a></li>
+                <li><a href="temoignages.html" class="nav-link">Témoignages</a></li>
+                <li><a href="contact.html" class="nav-link active nav-cta"><span
+                            class="btn btn-primary">Contact</span></a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+            <h1>Contactez-<span class="text-gradient">nous</span></h1>
+            <p>Une question ? Un projet ? Nous sommes là pour vous accompagner.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="reveal-left">
+                    <h3 style="margin-bottom: var(--space-lg);">Demandez votre <span class="text-gradient">devis
+                            gratuit</span></h3>
+
+                    <form id="contactForm">
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Nom complet *</label>
+                                <input type="text" class="form-input" id="name" placeholder="Votre nom" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" class="form-input" id="email" placeholder="votre@email.com"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Téléphone *</label>
+                                <input type="tel" class="form-input" id="phone" placeholder="06 00 00 00 00" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="event-type">Type d'événement *</label>
+                                <select class="form-select" id="event-type" required>
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="soiree-privee">Soirée privée</option>
+                                    <option value="entreprise">Événement d'entreprise</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="date">Date de l'événement</label>
+                                <input type="date" class="form-input" id="date">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="location">Lieu de l'événement</label>
+                                <input type="text" class="form-input" id="location" placeholder="Ville ou salle">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="services">Services souhaités</label>
+                            <div
+                                style="display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-xs);">
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services" value="dj"
+                                        style="accent-color: var(--primary-accent);"> Animation DJ
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services" value="deco-interieur"
+                                        style="accent-color: var(--primary-accent);"> Déco intérieure
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services" value="deco-exterieur"
+                                        style="accent-color: var(--primary-accent);"> Déco extérieure
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services" value="location"
+                                        style="accent-color: var(--primary-accent);"> Location matériel
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Votre message *</label>
+                            <textarea class="form-textarea" id="message" rows="5"
+                                placeholder="Décrivez votre projet, vos envies, le nombre d'invités..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                            Envoyer ma demande
+                        </button>
+
+                        <p
+                            style="text-align: center; margin-top: var(--space-md); color: var(--text-muted); font-size: 0.85rem;">
+                            🔒 Vos informations restent confidentielles et ne seront jamais partagées.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="reveal-right">
+                    <h3 style="margin-bottom: var(--space-lg);">Nos <span class="text-gradient">coordonnées</span></h3>
+
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div class="contact-info-content">
+                                <h4>Adresse</h4>
+                                <p>Livry, Calvados (14)<br>Basse-Normandie, France</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📞</div>
+                            <div class="contact-info-content">
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33600000000">06 00 00 00 00</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">✉️</div>
+                            <div class="contact-info-content">
+                                <h4>Email</h4>
+                                <a href="mailto:contact@musicevolution14.fr">contact@musicevolution14.fr</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🕐</div>
+                            <div class="contact-info-content">
+                                <h4>Horaires</h4>
+                                <p>Lun - Ven : 9h00 - 19h00<br>Sam : Sur rendez-vous</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div style="margin-top: var(--space-xl);">
+                        <h4 style="margin-bottom: var(--space-md);">Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener"
+                                aria-label="Facebook">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener"
+                                aria-label="Instagram">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor"
+                                        stroke-width="2" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Reassurance -->
+                    <div class="card"
+                        style="margin-top: var(--space-xl); background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02));">
+                        <h4 style="margin-bottom: var(--space-sm);">💬 Réponse rapide garantie</h4>
+                        <p class="card-text">
+                            Nous répondons à toutes les demandes sous 24 à 48h.
+                            Devis personnalisé et accompagnement humain pour votre projet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="zone-map reveal" style="height: 400px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166417.97665893797!2d-0.5!3d49.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a4596e3d04f47%3A0x40c14484fbcd430!2sCalvados!5e0!3m2!1sfr!2sfr!4v1702000000000!5m2!1sfr!2sfr"
+                    width="100%" height="100%" style="border:0; border-radius: var(--radius-lg);" allowfullscreen=""
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--surface);">
+        <div class="container container-sm">
+            <div class="section-header reveal">
+                <span class="subtitle">FAQ</span>
+                <h2>Questions <span class="text-gradient">fréquentes</span></h2>
+            </div>
+
+            <div class="reveal">
+                <div class="card" style="margin-bottom: var(--space-md);">
+                    <h4 style="margin-bottom: var(--space-sm);">Comment se passe un premier contact ?</h4>
+                    <p class="card-text">Après réception de votre demande, nous vous recontactons pour discuter de votre
+                        projet, comprendre vos besoins et vous proposer un devis personnalisé sans engagement.</p>
+                </div>
+
+                <div class="card" style="margin-bottom: var(--space-md);">
+                    <h4 style="margin-bottom: var(--space-sm);">Quel est votre périmètre d'intervention ?</h4>
+                    <p class="card-text">Nous intervenons principalement dans le Calvados et les départements
+                        limitrophes (Manche, Orne, Eure, Seine-Maritime). Pour des événements plus éloignés, n'hésitez
+                        pas à nous consulter.</p>
+                </div>
+
+                <div class="card" style="margin-bottom: var(--space-md);">
+                    <h4 style="margin-bottom: var(--space-sm);">Combien de temps à l'avance dois-je réserver ?</h4>
+                    <p class="card-text">Nous vous conseillons de nous contacter 3 à 6 mois avant votre événement,
+                        surtout pour les mariages. Cependant, nous pouvons parfois répondre à des demandes de dernière
+                        minute.</p>
+                </div>
+
+                <div class="card">
+                    <h4 style="margin-bottom: var(--space-sm);">Proposez-vous des formules ou packages ?</h4>
+                    <p class="card-text">Oui ! Nous proposons des packages combinant animation musicale et décoration
+                        pour des tarifs avantageux. Contactez-nous pour en savoir plus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.jpg" alt="MusicEvolution14">
+                        <span>MusicEvolution<span class="text-accent">14</span></span>
+                    </div>
+                    <p>Animation musicale et décoration événementielle sur mesure en Basse-Normandie.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link" target="_blank" rel="noopener"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener"
+                            aria-label="Instagram">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor"
+                                    stroke-width="2" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" class="footer-link">Accueil</a></li>
+                        <li><a href="prestations.html" class="footer-link">Prestations</a></li>
+                        <li><a href="locations.html" class="footer-link">Locations</a></li>
+                        <li><a href="galerie.html" class="footer-link">Galerie</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Infos</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html" class="footer-link">Qui sommes-nous</a></li>
+                        <li><a href="temoignages.html" class="footer-link">Témoignages</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li><span class="footer-link">📍 Livry, Calvados (14)</span></li>
+                        <li><a href="tel:+33600000000" class="footer-link">📞 06 00 00 00 00</a></li>
+                        <li><a href="mailto:contact@musicevolution14.fr" class="footer-link">✉️
+                                contact@musicevolution14.fr</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 MusicEvolution14. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

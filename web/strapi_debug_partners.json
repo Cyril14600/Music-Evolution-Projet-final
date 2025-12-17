@@ -1,0 +1,210 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "documentId": "doe9bpg9oymh5b89e479qcie",
+      "name": "laboratoires gilbert",
+      "createdAt": "2025-12-16T17:13:40.876Z",
+      "updatedAt": "2025-12-16T17:13:40.876Z",
+      "publishedAt": "2025-12-16T17:13:40.886Z",
+      "logo": {
+        "id": 1,
+        "documentId": "c8qffqvlt6nk2p9tl4m3wgbb",
+        "name": "laboratoire gilbert.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 225,
+        "height": 225,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_laboratoire gilbert.png",
+            "hash": "thumbnail_laboratoire_gilbert_c0d2985980",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 156,
+            "height": 156,
+            "size": 11.29,
+            "sizeInBytes": 11292,
+            "url": "/uploads/thumbnail_laboratoire_gilbert_c0d2985980.png"
+          }
+        },
+        "hash": "laboratoire_gilbert_c0d2985980",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 3.72,
+        "url": "/uploads/laboratoire_gilbert_c0d2985980.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-12-16T17:13:13.127Z",
+        "updatedAt": "2025-12-16T17:13:13.127Z",
+        "publishedAt": "2025-12-16T17:13:13.127Z"
+      }
+    },
+    {
+      "id": 4,
+      "documentId": "mcsttwbyvzxevy024fr9ke9f",
+      "name": "bosch",
+      "createdAt": "2025-12-16T20:14:13.346Z",
+      "updatedAt": "2025-12-16T20:14:13.346Z",
+      "publishedAt": "2025-12-16T20:14:13.384Z",
+      "logo": {
+        "id": 6,
+        "documentId": "p1l451bfm8p0f7t9apv79u9j",
+        "name": "o05_a_about_d.jpg",
+        "alternativeText": null,
+        "caption": null,
+        "width": 1920,
+        "height": 1080,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_o05_a_about_d.jpg",
+            "hash": "thumbnail_o05_a_about_d_bd9261a2fd",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 245,
+            "height": 138,
+            "size": 3.03,
+            "sizeInBytes": 3034,
+            "url": "/uploads/thumbnail_o05_a_about_d_bd9261a2fd.jpg"
+          },
+          "large": {
+            "name": "large_o05_a_about_d.jpg",
+            "hash": "large_o05_a_about_d_bd9261a2fd",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 1000,
+            "height": 563,
+            "size": 20.21,
+            "sizeInBytes": 20211,
+            "url": "/uploads/large_o05_a_about_d_bd9261a2fd.jpg"
+          },
+          "medium": {
+            "name": "medium_o05_a_about_d.jpg",
+            "hash": "medium_o05_a_about_d_bd9261a2fd",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 750,
+            "height": 422,
+            "size": 13.87,
+            "sizeInBytes": 13873,
+            "url": "/uploads/medium_o05_a_about_d_bd9261a2fd.jpg"
+          },
+          "small": {
+            "name": "small_o05_a_about_d.jpg",
+            "hash": "small_o05_a_about_d_bd9261a2fd",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "path": null,
+            "width": 500,
+            "height": 281,
+            "size": 8.44,
+            "sizeInBytes": 8438,
+            "url": "/uploads/small_o05_a_about_d_bd9261a2fd.jpg"
+          }
+        },
+        "hash": "o05_a_about_d_bd9261a2fd",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 45.61,
+        "url": "/uploads/o05_a_about_d_bd9261a2fd.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-12-16T20:13:31.775Z",
+        "updatedAt": "2025-12-16T20:13:31.775Z",
+        "publishedAt": "2025-12-16T20:13:31.776Z"
+      }
+    },
+    {
+      "id": 6,
+      "documentId": "xyyjkmiujdl0lq713yjvbipn",
+      "name": "eiffage",
+      "createdAt": "2025-12-17T11:20:40.485Z",
+      "updatedAt": "2025-12-17T11:20:40.485Z",
+      "publishedAt": "2025-12-17T11:20:40.500Z",
+      "logo": {
+        "id": 10,
+        "documentId": "gi5t45bf9pbrp32irwkz2udl",
+        "name": "Eiffage-Logo.wine_.png",
+        "alternativeText": null,
+        "caption": null,
+        "width": 3000,
+        "height": 2000,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_Eiffage-Logo.wine_.png",
+            "hash": "thumbnail_Eiffage_Logo_wine_3ab2ec76db",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 234,
+            "height": 156,
+            "size": 4.55,
+            "sizeInBytes": 4550,
+            "url": "/uploads/thumbnail_Eiffage_Logo_wine_3ab2ec76db.png"
+          },
+          "large": {
+            "name": "large_Eiffage-Logo.wine_.png",
+            "hash": "large_Eiffage_Logo_wine_3ab2ec76db",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 1000,
+            "height": 667,
+            "size": 21.7,
+            "sizeInBytes": 21696,
+            "url": "/uploads/large_Eiffage_Logo_wine_3ab2ec76db.png"
+          },
+          "small": {
+            "name": "small_Eiffage-Logo.wine_.png",
+            "hash": "small_Eiffage_Logo_wine_3ab2ec76db",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 500,
+            "height": 333,
+            "size": 10.31,
+            "sizeInBytes": 10311,
+            "url": "/uploads/small_Eiffage_Logo_wine_3ab2ec76db.png"
+          },
+          "medium": {
+            "name": "medium_Eiffage-Logo.wine_.png",
+            "hash": "medium_Eiffage_Logo_wine_3ab2ec76db",
+            "ext": ".png",
+            "mime": "image/png",
+            "path": null,
+            "width": 750,
+            "height": 500,
+            "size": 17.02,
+            "sizeInBytes": 17017,
+            "url": "/uploads/medium_Eiffage_Logo_wine_3ab2ec76db.png"
+          }
+        },
+        "hash": "Eiffage_Logo_wine_3ab2ec76db",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 20.51,
+        "url": "/uploads/Eiffage_Logo_wine_3ab2ec76db.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2025-12-17T11:20:30.619Z",
+        "updatedAt": "2025-12-17T11:20:30.619Z",
+        "publishedAt": "2025-12-17T11:20:30.621Z"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 3
+    }
+  }
+}

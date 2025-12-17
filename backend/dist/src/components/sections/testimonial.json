@@ -1,0 +1,28 @@
+{
+    "collectionName": "components_sections_testimonials",
+    "info": {
+        "displayName": "Testimonial",
+        "description": "Client review"
+    },
+    "options": {},
+    "attributes": {
+        "author": {
+            "type": "string",
+            "required": true
+        },
+        "eventContext": {
+            "type": "string",
+            "required": true
+        },
+        "content": {
+            "type": "text",
+            "required": true
+        },
+        "rating": {
+            "type": "integer",
+            "default": 5,
+            "min": 1,
+            "max": 5
+        }
+    }
+}

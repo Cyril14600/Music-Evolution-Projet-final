@@ -1,0 +1,21 @@
+
+> backend@0.1.0 build
+> strapi build
+
+- Compiling TS
+✔ Compiling TS (3677ms)
+- Building build context
+
+[INFO] Including the following ENV variables as part of the JS bundle:
+    - ADMIN_PATH
+    - STRAPI_ADMIN_BACKEND_URL
+    - STRAPI_TELEMETRY_DISABLED
+    - STRAPI_AI_URL
+    - STRAPI_ANALYTICS_URL
+✔ Building build context (375ms)
+- Building admin panel
+
+✖ Building admin panel
+[ERROR]  There seems to be an unexpected error, try again with --debug for more information 
+
+┌──────────────────────────────────────────────────────────────────────────────┐│                                                                              ││   [31m[vite:css] Failed to load PostCSS config (searchPath:[39m                      ││   [31mC:/Users/cyril/Desktop/m15/backend): [Error] Loading PostCSS Plugin[39m        ││   [31mfailed: Cannot find module 'tailwindcss'                                   ││   Require stack:                                                             ││   - C:\Users\cyril\postcss.config.js                                         ││                                                                              ││   (@C:\Users\cyril\postcss.config.js)                                        ││   Error: Loading PostCSS Plugin failed: Cannot find module 'tailwindcss'     ││   Require stack:                                                             ││   - C:\Users\cyril\postcss.config.js                                         ││                                                                              ││   (@C:\Users\cyril\postcss.config.js)                                        ││   at load (file:///C:/Users/cyril/Desktop/m15/backend/node_modules/vite/di   ││   st/node/chunks/dep-C6uTJdX2.js:33632:11)                                   ││   at file:///C:/Users/cyril/Desktop/m15/backend/node_modules/vite/dist/nod   ││   e/chunks/dep-C6uTJdX2.js:33657:16                                          ││   at Array.map (<anonymous>)                                                 ││   at plugins (file:///C:/Users/cyril/Desktop/m15/backend/node_modules/vite   ││   /dist/node/chunks/dep-C6uTJdX2.js:33656:8)                                 ││   at processResult (file:///C:/Users/cyril/Desktop/m15/backend/node_module   ││   s/vite/dist/node/chunks/dep-C6uTJdX2.js:33726:14)                          ││   at file:///C:/Users/cyril/Desktop/m15/backend/node_modules/vite/dist/nod   ││   e/chunks/dep-C6uTJdX2.js:33856:14[39m                                          ││   file: [36mC:/Users/cyril/Desktop/m15/backend/node_modules/highlight.js/style[39m   ││   [36ms/solarized-dark.css[39m                                                       ││                                                                              ││                                                                              │└──────────────────────────────────────────────────────────────────────────────┘

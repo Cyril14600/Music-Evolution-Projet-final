@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez les avis de nos clients sur MusicEvolution14. Partagez également votre expérience avec nous.">
+    <title>Témoignages | MusicEvolution14</title>
+
+    <link rel="icon" type="image/jpeg" href="logo.webp">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://musicevolution14.fr/temoignages.html">
+    <meta property="og:title" content="Témoignages | MusicEvolution14">
+    <meta property="og:description" content="Animation musicale et décoration événementielle.">
+    <meta property="og:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://musicevolution14.fr/temoignages.html">
+    <meta property="twitter:title" content="Témoignages | MusicEvolution14">
+    <meta property="twitter:description" content="Animation musicale et décoration événementielle.">
+    <meta property="twitter:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://musicevolution14.fr/temoignages.html">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav"></nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Témoignages</span>
+            </div>
+            <h1><span class="text-gradient">Témoignages</span></h1>
+            <p>Ils ont fait confiance à MusicEvolution14 pour leurs moments importants...</p>
+        </div>
+    </header>
+
+    <!-- Submit Testimonial Form -->
+    <section class="section">
+        <div class="container container-sm">
+            <div class="testimonial-form-section reveal">
+                <h3 class="text-center">📝 Partagez votre expérience</h3>
+                <p class="text-center" style="color: var(--text-muted); margin-bottom: var(--space-lg);">
+                    Vous avez fait appel à nos services ? Laissez-nous votre avis !
+                </p>
+
+                <form id="testimonialForm">
+                    <div class="grid grid-2" style="gap: var(--space-md);">
+                        <div class="form-group">
+                            <label class="form-label" for="testimonial-name">Votre prénom *</label>
+                            <input type="text" class="form-input" id="testimonial-name" placeholder="Ex: Marie"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="testimonial-lastname">Votre nom *</label>
+                            <input type="text" class="form-input" id="testimonial-lastname" placeholder="Ex: Dupont"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="testimonial-email">Votre adresse email *</label>
+                            <input type="email" class="form-input" id="testimonial-email"
+                                placeholder="Ex: marie@exemple.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="testimonial-date">Date de l'événement *</label>
+                            <input type="date" class="form-input" id="testimonial-date" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="testimonial-event">Type d'événement *</label>
+                        <select class="form-select" id="testimonial-event" required>
+                            <option value="">Sélectionnez...</option>
+                            <option value="Mariage">Mariage</option>
+                            <option value="Anniversaire">Anniversaire</option>
+                            <option value="Soirée privée">Soirée privée</option>
+                            <option value="Événement entreprise">Événement entreprise</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Votre note *</label>
+                        <div class="rating-input">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5">★</label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4">★</label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3">★</label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2">★</label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1">★</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="testimonial-message">Votre témoignage *</label>
+                        <textarea class="form-textarea" id="testimonial-message" rows="4"
+                            placeholder="Partagez votre expérience avec MusicEvolution14..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer mon témoignage</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="section" style="background: var(--surface);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Avis Clients</span>
+                <h2>Ce qu'ils <span class="text-gradient">disent de nous</span></h2>
+            </div>
+
+            <div class="grid grid-3 testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="card testimonial-card reveal stagger-1" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Une équipe incroyable ! Notre mariage était parfait grâce à MusicEvolution14.
+                        La décoration était à couper le souffle et l'ambiance musicale a fait danser tout le monde
+                        jusqu'au bout de la nuit. Un immense merci !"
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Marie & Thomas</span>
+                        <span class="testimonial-event">Mariage - Juin 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card testimonial-card reveal stagger-2" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Super prestation pour les 50 ans de mon père. Le DJ a su s'adapter à tous les goûts musicaux
+                        et la déco était exactement ce que nous voulions. Rapport qualité-prix excellent !"
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Sophie L.</span>
+                        <span class="testimonial-event">Anniversaire - Mars 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card testimonial-card reveal stagger-3" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Professionnels et à l'écoute. Notre soirée d'entreprise a été un franc succès.
+                        Tous nos collaborateurs ont adoré l'ambiance. Je recommande vivement !"
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Jean-Pierre M.</span>
+                        <span class="testimonial-event">Événement Corporate - Décembre 2023</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="card testimonial-card reveal stagger-4" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Nous avons confié notre mariage à MusicEvolution14 et nous ne regrettons absolument pas.
+                        Le résultat était au-delà de nos espérances. Merci pour cette journée magique !"
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Camille & Julien</span>
+                        <span class="testimonial-event">Mariage - Septembre 2023</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="card testimonial-card reveal stagger-5" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Excellente prestation pour l'anniversaire de ma fille (18 ans).
+                        Lumières, son, tout était parfait ! Les jeunes ont adoré. Très pro."
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Isabelle D.</span>
+                        <span class="testimonial-event">Anniversaire - Février 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="card testimonial-card reveal stagger-6" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★☆
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Très bonne prestation pour notre fête d'été. Le matériel était de qualité
+                        et l'installation s'est faite rapidement. Seul petit bémol : nous aurions aimé plus de choix
+                        musical."
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Pierre B.</span>
+                        <span class="testimonial-event">Soirée privée - Juillet 2023</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 7 -->
+                <div class="card testimonial-card reveal" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "La déco extérieure était sublime ! Les guirlandes lumineuses ont transformé
+                        notre jardin en un véritable conte de fées. Nos invités étaient émerveillés."
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Nathalie G.</span>
+                        <span class="testimonial-event">Mariage - Août 2024</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8 -->
+                <div class="card testimonial-card reveal" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Équipe super sympa et très réactive. Ils ont su s'adapter à nos demandes
+                        de dernière minute sans aucun problème. Je les recommande les yeux fermés !"
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Laurent R.</span>
+                        <span class="testimonial-event">Anniversaire - Novembre 2023</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 9 -->
+                <div class="card testimonial-card reveal" style="text-align: left;">
+                    <div class="testimonial-stars" style="font-size: 1.2rem; margin-bottom: var(--space-sm);">★★★★★
+                    </div>
+                    <p class="testimonial-text"
+                        style="font-size: 1rem; font-style: normal; margin-bottom: var(--space-md);">
+                        "Notre séminaire d'entreprise a été une vraie réussite grâce à MusicEvolution14.
+                        Ambiance détendue mais professionnelle, exactement ce qu'on recherchait."
+                    </p>
+                    <div class="testimonial-author" style="align-items: flex-start;">
+                        <span class="testimonial-name">Caroline M.</span>
+                        <span class="testimonial-event">Séminaire d'entreprise - Octobre 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-4 text-center">
+                <div class="reveal stagger-1">
+                    <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: var(--space-xs);">200+</h2>
+                    <p style="color: var(--text-muted);">Événements animés</p>
+                </div>
+                <div class="reveal stagger-2">
+                    <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: var(--space-xs);">4.9/5</h2>
+                    <p style="color: var(--text-muted);">Note moyenne</p>
+                </div>
+                <div class="reveal stagger-3">
+                    <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: var(--space-xs);">98%</h2>
+                    <p style="color: var(--text-muted);">Clients satisfaits</p>
+                </div>
+                <div class="reveal stagger-4">
+                    <h2 class="text-gradient" style="font-size: 3rem; margin-bottom: var(--space-xs);">10+</h2>
+                    <p style="color: var(--text-muted);">Années d'expérience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Rejoignez nos <span class="text-gradient">clients satisfaits</span></h2>
+                <p>
+                    Faites confiance à MusicEvolution14 pour votre prochain événement
+                    et vivez une expérience inoubliable.
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

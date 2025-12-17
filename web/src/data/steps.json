@@ -1,0 +1,26 @@
+[
+    {
+        "step": "01",
+        "icon": "💡",
+        "title": "1. Premier Contact",
+        "desc": "Échange téléphonique ou visio pour cerner vos envies et établir un premier devis estimatif."
+    },
+    {
+        "step": "02",
+        "icon": "🤝",
+        "title": "2. Rencontre",
+        "desc": "Rendez-vous physique ou sur le lieu de l'événement pour affiner les détails et la décoration."
+    },
+    {
+        "step": "03",
+        "icon": "📝",
+        "title": "3. Validation",
+        "desc": "Signature du contrat, versement de l'acompte et validation finale du déroulé de la prestation."
+    },
+    {
+        "step": "04",
+        "icon": "✨",
+        "title": "4. Jour J",
+        "desc": "Installation, coordination et animation. Profitez de votre événement, on s'occupe de tout !"
+    }
+]

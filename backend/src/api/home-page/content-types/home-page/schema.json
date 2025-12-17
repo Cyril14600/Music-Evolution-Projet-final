@@ -1,0 +1,61 @@
+{
+    "kind": "singleType",
+    "collectionName": "home_pages",
+    "info": {
+        "singularName": "home-page",
+        "pluralName": "home-pages",
+        "displayName": "Home Page",
+        "description": "Content for the main landing page"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "heroTitle": {
+            "type": "richtext"
+        },
+        "heroSubtitle": {
+            "type": "text"
+        },
+        "sectionEventsTitle": {
+            "type": "string"
+        },
+        "sectionEventsSubtitle": {
+            "type": "text"
+        },
+        "events": {
+            "type": "component",
+            "repeatable": true,
+            "component": "sections.event-card"
+        },
+        "animationSection": {
+            "type": "component",
+            "repeatable": false,
+            "component": "sections.feature-section"
+        },
+        "decorIntSection": {
+            "type": "component",
+            "repeatable": false,
+            "component": "sections.feature-section"
+        },
+        "decorExtSection": {
+            "type": "component",
+            "repeatable": false,
+            "component": "sections.feature-section"
+        },
+        "testimonials": {
+            "type": "component",
+            "repeatable": true,
+            "component": "sections.testimonial"
+        },
+        "partners": {
+            "type": "media",
+            "multiple": true,
+            "required": false,
+            "allowedTypes": [
+                "images"
+            ]
+        }
+    }
+}

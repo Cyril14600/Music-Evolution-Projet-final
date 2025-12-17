@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Découvrez notre galerie photo : mariages, anniversaires, soirées privées et événements d'entreprise animés par MusicEvolution14.">
+    <title>Galerie | MusicEvolution14</title>
+
+    <link rel="icon" type="image/jpeg" href="logo.webp">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://musicevolution14.fr/galerie.html">
+    <meta property="og:title" content="Galerie | MusicEvolution14">
+    <meta property="og:description" content="Animation musicale et décoration événementielle.">
+    <meta property="og:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://musicevolution14.fr/galerie.html">
+    <meta property="twitter:title" content="Galerie | MusicEvolution14">
+    <meta property="twitter:description" content="Animation musicale et décoration événementielle.">
+    <meta property="twitter:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://musicevolution14.fr/galerie.html">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav"></nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Galerie</span>
+            </div>
+            <h1>Notre <span class="text-gradient">Galerie</span></h1>
+            <p>Découvrez en images nos réalisations et revivez les moments forts des événements que nous avons animés.
+            </p>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="gallery-filters reveal">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="mariage">Mariages</button>
+                <button class="filter-btn" data-filter="anniversaire">Anniversaires</button>
+                <button class="filter-btn" data-filter="soiree">Soirées Privées</button>
+                <button class="filter-btn" data-filter="entreprise">Entreprises</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Mariages -->
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/358536994_763506195775581_1722177586522969281_n.webp"
+                        alt="Mariage - Décoration élégante">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Décoration élégante</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/500695294_2891148291086561_3175454071053076445_n.webp"
+                        alt="Mariage - Ambiance lumineuse">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Ambiance lumineuse</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/501307956_2891148161086574_6947751089387842822_n.webp"
+                        alt="Mariage - Salle de réception">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Salle de réception</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anniversaires -->
+                <div class="gallery-item reveal" data-category="anniversaire">
+                    <img src="images/502860448_2892896334245090_475319705922716454_n.webp"
+                        alt="Anniversaire - Fête colorée">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Anniversaire</span>
+                            <h4 class="gallery-item-title">Fête colorée</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="anniversaire">
+                    <img src="images/503173606_2892903777577679_1151030800917129172_n.webp"
+                        alt="Anniversaire - Soirée dansante">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Anniversaire</span>
+                            <h4 class="gallery-item-title">Soirée dansante</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="anniversaire">
+                    <img src="images/487604752_1242883094504553_1655194183820495562_n.webp"
+                        alt="Anniversaire - Décoration festive">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Anniversaire</span>
+                            <h4 class="gallery-item-title">Décoration festive</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soirées Privées -->
+                <div class="gallery-item reveal" data-category="soiree">
+                    <img src="images/485751387_1234421908684005_357112647473288635_n.webp"
+                        alt="Soirée privée - Ambiance DJ">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Soirée Privée</span>
+                            <h4 class="gallery-item-title">Ambiance DJ</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="soiree">
+                    <img src="images/474332099_2767380653463326_819400420326920429_n.webp"
+                        alt="Soirée privée - Jeux de lumière">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Soirée Privée</span>
+                            <h4 class="gallery-item-title">Jeux de lumière</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="soiree">
+                    <img src="images/462310784_2677631959104863_9101318473195121617_n.webp"
+                        alt="Soirée privée - Dance floor" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Soirée Privée</span>
+                            <h4 class="gallery-item-title">Dance floor</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entreprises -->
+                <div class="gallery-item reveal" data-category="entreprise">
+                    <img src="images/486670200_1237951618331034_7657288755883605121_n.webp"
+                        alt="Entreprise - Événement corporate">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Entreprise</span>
+                            <h4 class="gallery-item-title">Événement corporate</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="entreprise">
+                    <img src="images/462362233_2677632165771509_8506079081019845417_n.webp"
+                        alt="Entreprise - Séminaire festif" loading="lazy">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Entreprise</span>
+                            <h4 class="gallery-item-title">Séminaire festif</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More images -->
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/358598935_763506179108916_804900529945203134_n.webp" alt="Mariage - Table décorée">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Table décorée</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="soiree">
+                    <img src="images/358606488_763506189108915_307328638165093485_n.webp"
+                        alt="Soirée - Centre de table">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Soirée</span>
+                            <h4 class="gallery-item-title">Centre de table</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="anniversaire">
+                    <img src="images/358629641_763506175775583_260409908949283336_n.webp"
+                        alt="Anniversaire - Déco ballons">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Anniversaire</span>
+                            <h4 class="gallery-item-title">Décoration ballons</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/358645861_763506185775582_5987152981800305572_n.webp"
+                        alt="Mariage - Ambiance romantique">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Ambiance romantique</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="soiree">
+                    <img src="images/358662182_763506192442248_1454394921732675917_n.webp" alt="Soirée - Setup DJ">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Soirée</span>
+                            <h4 class="gallery-item-title">Setup DJ professionnel</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="anniversaire">
+                    <img src="images/167838902_1719162231618512_5008711028858079519_n.webp"
+                        alt="Anniversaire - Décoration salle">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Anniversaire</span>
+                            <h4 class="gallery-item-title">Décoration de salle</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item reveal" data-category="mariage">
+                    <img src="images/168429687_1719162361618499_7460250070277366377_n.webp"
+                        alt="Mariage - Illuminations">
+                    <div class="gallery-item-overlay">
+                        <div>
+                            <span class="gallery-item-category">Mariage</span>
+                            <h4 class="gallery-item-title">Illuminations</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Fermer">✕</button>
+        <button class="lightbox-prev" aria-label="Image précédente">❮</button>
+        <button class="lightbox-next" aria-label="Image suivante">❯</button>
+        <div class="lightbox-content">
+            <img src="" alt="Image agrandie" id="lightbox-img">
+        </div>
+        <div class="lightbox-thumbnails">
+            <!-- Thumbnails injected via JS -->
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Votre événement <span class="text-gradient">ici bientôt</span> ?</h2>
+                <p>
+                    Rejoignez la liste de nos clients satisfaits et laissez-nous créer
+                    des souvenirs visuels inoubliables pour votre prochain événement.
+                </p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

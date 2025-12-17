@@ -1,0 +1,87 @@
+
+> backend@0.1.0 develop
+> strapi develop
+
+- Cleaning dist dir C:/Users/cyril/Desktop/m15/backend/dist
+✔ Cleaning dist dir (4ms)
+- Loading Strapi
+[2025-12-16 18:00:58.080] [33mwarn[39m: admin.auth.options.expiresIn is deprecated and will be removed in Strapi 6. Please configure admin.auth.sessions.maxRefreshTokenLifespan and admin.auth.sessions.maxSessionLifespan.
+[2025-12-16 18:00:58.343] [32minfo[39m: Home Page not found, creating it...
+[2025-12-16 18:00:58.507] [32minfo[39m: Created Home Page content
+- Building build context
+
+[INFO] Including the following ENV variables as part of the JS bundle:
+    - ADMIN_PATH
+    - STRAPI_ADMIN_BACKEND_URL
+    - STRAPI_TELEMETRY_DISABLED
+    - STRAPI_AI_URL
+    - STRAPI_ANALYTICS_URL
+✔ Building build context (192ms)
+- Creating admin
+✔ Creating admin (1033ms)
+✔ Loading Strapi (4776ms)
+- Generating types
+✔ Generating types (1125ms)
+- Compiling TS
+- Cleaning dist dir C:/Users/cyril/Desktop/m15/backend/dist
+✔ Cleaning dist dir (70ms)
+✔ Compiling TS (4310ms)
+
+ Project information
+
+[90m┌────────────────────[39m[90m┬──────────────────────────────────────────────────┐[39m
+[90m│[39m Time               [90m│[39m Tue Dec 16 2025 18:01:05 GMT+0100 (heure normal… [90m│[39m
+[90m│[39m Launched in        [90m│[39m 10244 ms                                         [90m│[39m
+[90m│[39m Environment        [90m│[39m development                                      [90m│[39m
+[90m│[39m Process PID        [90m│[39m 13128                                            [90m│[39m
+[90m│[39m Version            [90m│[39m 5.32.0 (node v20.19.6)                           [90m│[39m
+[90m│[39m Edition            [90m│[39m Community                                        [90m│[39m
+[90m│[39m Database           [90m│[39m sqlite                                           [90m│[39m
+[90m│[39m Database name      [90m│[39m .tmp\data.db                                     [90m│[39m
+[90m└────────────────────[39m[90m┴──────────────────────────────────────────────────┘[39m
+
+ Actions available
+
+Welcome back!
+To access the server ⚡️, go to:
+http://localhost:1337
+
+[2025-12-16 18:01:05.221] [32minfo[39m: Strapi started successfully
+[2025-12-16 18:01:51.994] [32mhttp[39m: GET /api/services?populate=* (56 ms) 404
+[2025-12-16 18:02:46.143] [32mhttp[39m: GET /admin/content-manager/single-types/api::home-page.home-page (142 ms) 200
+[2025-12-16 18:02:47.467] [32mhttp[39m: GET /admin/project-type (4 ms) 200
+[2025-12-16 18:02:47.755] [32mhttp[39m: GET /admin/init (8 ms) 200
+[2025-12-16 18:02:47.806] [32mhttp[39m: GET /admin/users/me (50 ms) 200
+[2025-12-16 18:02:47.841] [32mhttp[39m: GET /admin/users/me/permissions (81 ms) 200
+[2025-12-16 18:02:47.909] [32mhttp[39m: GET /admin/information (66 ms) 200
+[2025-12-16 18:02:47.912] [32mhttp[39m: GET /admin/telemetry-properties (63 ms) 200
+[2025-12-16 18:02:48.015] [32mhttp[39m: GET /admin/guided-tour-meta (32 ms) 200
+[2025-12-16 18:02:48.062] [32mhttp[39m: GET /content-manager/init (39 ms) 200
+[2025-12-16 18:02:48.127] [32mhttp[39m: GET /content-manager/content-types-settings (63 ms) 200
+[2025-12-16 18:02:48.136] [32mhttp[39m: GET /admin/license-limit-information (118 ms) 200
+[2025-12-16 18:02:48.274] [32mhttp[39m: GET /content-manager/init (25 ms) 200
+[2025-12-16 18:02:48.396] [32mhttp[39m: GET /content-manager/single-types/api::home-page.home-page? (93 ms) 200
+[2025-12-16 18:02:48.422] [32mhttp[39m: GET /content-manager/content-types/api::home-page.home-page/configuration (25 ms) 200
+[2025-12-16 18:02:48.491] [32mhttp[39m: GET /i18n/settings (18 ms) 200
+[2025-12-16 18:02:48.512] [32mhttp[39m: GET /i18n/ai-localization-jobs/single-types/api::home-page.home-page (20 ms) 200
+[2025-12-16 18:02:48.532] [32mhttp[39m: GET /i18n/locales (19 ms) 200
+[2025-12-16 18:02:48.562] [32mhttp[39m: GET /content-manager/preview/url/api::home-page.home-page?locale=&status=published (25 ms) 404
+[2025-12-16 18:02:48.569] [32mhttp[39m: GET /admin/ai-feature-config (36 ms) 200
+[2025-12-16 18:02:49.268] [32mhttp[39m: GET /content-manager/single-types/api::home-page.home-page/actions/countDraftRelations? (66 ms) 200
+[2025-12-16 18:03:03.727] [32mhttp[39m: GET /content-manager/single-types/api::global.global? (34 ms) 404
+[2025-12-16 18:03:03.750] [32mhttp[39m: GET /content-manager/content-types/api::global.global/configuration (21 ms) 200
+[2025-12-16 18:03:03.804] [32mhttp[39m: GET /i18n/ai-localization-jobs/single-types/api::global.global (16 ms) 200
+[2025-12-16 18:03:05.581] [32mhttp[39m: GET /content-manager/content-types/api::faq.faq/configuration (13 ms) 200
+[2025-12-16 18:03:05.601] [32mhttp[39m: GET /content-manager/collection-types/api::faq.faq?page=1&pageSize=10&sort=question%3AASC (19 ms) 200
+[2025-12-16 18:03:15.971] [32mhttp[39m: GET /content-manager/preview/url/api::home-page.home-page?locale=&status=published (33 ms) 404
+[2025-12-16 18:03:16.051] [32mhttp[39m: GET /content-manager/single-types/api::home-page.home-page/actions/countDraftRelations? (78 ms) 200
+[2025-12-16 18:05:27.482] [32minfo[39m: File created: C:\Users\cyril\Desktop\m15\backend\src\api\partner\content-types\partner\schema.json
+- Cleaning dist dir C:/Users/cyril/Desktop/m15/backend/dist
+✔ Cleaning dist dir (29ms)
+[2025-12-16 18:05:33.271] [32minfo[39m: File changed: C:\Users\cyril\Desktop\m15\backend\src\api\partner\content-types\partner\schema.json
+[2025-12-16 18:05:34.658] [32minfo[39m: Shutting down Strapi
+[2025-12-16 18:05:34.668] [32minfo[39m: Strapi has been shut down
+- Loading Strapi
+[ERROR]  There seems to be an unexpected error, try again with --debug for more information 
+
+┌──────────────────────────────────────────────────────────────────────────────┐│                                                                              ││   SyntaxError: C:\Users\cyril\Desktop\m15\backend\dist\src\api\partner\con   ││   tent-types\partner\schema.json: Unexpected end of JSON input               ││   at JSON.parse (<anonymous>)                                                ││   at Object._readFile (C:\Users\cyril\Desktop\m15\backend\node_modules\jso   ││   nfile\index.js:25:16)                                                      ││   at async loadFile (C:\Users\cyril\Desktop\m15\backend\node_modules\@stra   ││   pi\core\dist\loaders\apis.js:150:25)                                       ││   at async loadDir (C:\Users\cyril\Desktop\m15\backend\node_modules\@strap   ││   i\core\dist\loaders\apis.js:134:37)                                        ││   at async loadContentTypes (C:\Users\cyril\Desktop\m15\backend\node_modul   ││   es\@strapi\core\dist\loaders\apis.js:101:36)                               ││   at async Promise.all (index 7)                                             ││   at async loadAPI (C:\Users\cyril\Desktop\m15\backend\node_modules\@strap   ││   i\core\dist\loaders\apis.js:60:98)                                         ││   at async loadAPIs (C:\Users\cyril\Desktop\m15\backend\node_modules\@stra   ││   pi\core\dist\loaders\apis.js:30:21)                                        ││   at async Promise.all (index 4)                                             ││   at async Object.loadApplicationContext (C:\Users\cyril\Desktop\m15\backe   ││   nd\node_modules\@strapi\core\dist\loaders\index.js:13:5)                   ││                                                                              │└──────────────────────────────────────────────────────────────────────────────┘

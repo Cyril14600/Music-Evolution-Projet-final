@@ -1,0 +1,42 @@
+{
+    "kind": "collectionType",
+    "collectionName": "gallery_items",
+    "info": {
+        "singularName": "gallery-item",
+        "pluralName": "gallery-items",
+        "displayName": "Gallery Item",
+        "description": "Image for the gallery with category"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "category": {
+            "type": "enumeration",
+            "enum": [
+                "mariage",
+                "anniversaire",
+                "soiree",
+                "entreprise"
+            ],
+            "required": true
+        },
+        "categoryLabel": {
+            "type": "string",
+            "required": true
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
+        }
+    }
+}

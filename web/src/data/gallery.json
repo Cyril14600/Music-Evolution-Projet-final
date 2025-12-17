@@ -1,0 +1,20 @@
+[
+  { "id": 1, "category": "mariage", "image": "/images/358536994_763506195775581_1722177586522969281_n.webp", "title": "Décoration élégante", "categoryLabel": "Mariage" },
+  { "id": 2, "category": "mariage", "image": "/images/500695294_2891148291086561_3175454071053076445_n.webp", "title": "Ambiance lumineuse", "categoryLabel": "Mariage" },
+  { "id": 3, "category": "mariage", "image": "/images/501307956_2891148161086574_6947751089387842822_n.webp", "title": "Salle de réception", "categoryLabel": "Mariage" },
+  { "id": 4, "category": "anniversaire", "image": "/images/502860448_2892896334245090_475319705922716454_n.webp", "title": "Fête colorée", "categoryLabel": "Anniversaire" },
+  { "id": 5, "category": "anniversaire", "image": "/images/503173606_2892903777577679_1151030800917129172_n.webp", "title": "Soirée dansante", "categoryLabel": "Anniversaire" },
+  { "id": 6, "category": "anniversaire", "image": "/images/487604752_1242883094504553_1655194183820495562_n.webp", "title": "Décoration festive", "categoryLabel": "Anniversaire" },
+  { "id": 7, "category": "soiree", "image": "/images/485751387_1234421908684005_357112647473288635_n.webp", "title": "Ambiance DJ", "categoryLabel": "Soirée Privée" },
+  { "id": 8, "category": "soiree", "image": "/images/474332099_2767380653463326_819400420326920429_n.webp", "title": "Jeux de lumière", "categoryLabel": "Soirée Privée" },
+  { "id": 9, "category": "soiree", "image": "/images/462310784_2677631959104863_9101318473195121617_n.webp", "title": "Dance floor", "categoryLabel": "Soirée Privée" },
+  { "id": 10, "category": "entreprise", "image": "/images/486670200_1237951618331034_7657288755883605121_n.webp", "title": "Événement corporate", "categoryLabel": "Entreprise" },
+  { "id": 11, "category": "entreprise", "image": "/images/462362233_2677632165771509_8506079081019845417_n.webp", "title": "Séminaire festif", "categoryLabel": "Entreprise" },
+  { "id": 12, "category": "mariage", "image": "/images/358598935_763506179108916_804900529945203134_n.webp", "title": "Table décorée", "categoryLabel": "Mariage" },
+  { "id": 13, "category": "soiree", "image": "/images/358606488_763506189108915_307328638165093485_n.webp", "title": "Centre de table", "categoryLabel": "Soirée" },
+  { "id": 14, "category": "anniversaire", "image": "/images/358629641_763506175775583_260409908949283336_n.webp", "title": "Décoration ballons", "categoryLabel": "Anniversaire" },
+  { "id": 15, "category": "mariage", "image": "/images/358645861_763506185775582_5987152981800305572_n.webp", "title": "Ambiance romantique", "categoryLabel": "Mariage" },
+  { "id": 16, "category": "soiree", "image": "/images/358662182_763506192442248_1454394921732675917_n.webp", "title": "Setup DJ professionnel", "categoryLabel": "Soirée" },
+  { "id": 17, "category": "anniversaire", "image": "/images/167838902_1719162231618512_5008711028858079519_n.webp", "title": "Décoration de salle", "categoryLabel": "Anniversaire" },
+  { "id": 18, "category": "mariage", "image": "/images/168429687_1719162361618499_7460250070277366377_n.webp", "title": "Illuminations", "categoryLabel": "Mariage" }
+]

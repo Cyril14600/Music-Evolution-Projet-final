@@ -1,0 +1,26 @@
+[
+    {
+        "label": "Accueil",
+        "path": "/"
+    },
+    {
+        "label": "Prestations",
+        "path": "/prestations"
+    },
+    {
+        "label": "Locations",
+        "path": "/locations"
+    },
+    {
+        "label": "Galerie",
+        "path": "/galerie"
+    },
+    {
+        "label": "À Propos",
+        "path": "/about"
+    },
+    {
+        "label": "Témoignages",
+        "path": "/temoignages"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "icon": "📸",
+        "title": "Photobooth",
+        "description": "Borne photo avec accessoires et impressions instantanées pour des souvenirs amusants."
+    },
+    {
+        "id": 2,
+        "icon": "🎤",
+        "title": "Micro & Sono",
+        "description": "Matériel de sonorisation pour discours, animations et cérémonies."
+    },
+    {
+        "id": 3,
+        "icon": "🎪",
+        "title": "Installation",
+        "description": "Montage et démontage complet de toutes nos installations."
+    },
+    {
+        "id": 4,
+        "icon": "🤝",
+        "title": "Conseil",
+        "description": "Accompagnement personnalisé pour définir l'ambiance idéale de votre événement."
+    }
+]

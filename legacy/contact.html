@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contactez MusicEvolution14 pour un devis gratuit. Animation musicale et décoration événementielle en Normandie.">
+    <title>Contact | MusicEvolution14</title>
+
+    <link rel="icon" type="image/jpeg" href="logo.webp">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://musicevolution14.fr/contact.html">
+    <meta property="og:title" content="Contact | MusicEvolution14">
+    <meta property="og:description" content="Animation musicale et décoration événementielle.">
+    <meta property="og:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://musicevolution14.fr/contact.html">
+    <meta property="twitter:title" content="Contact | MusicEvolution14">
+    <meta property="twitter:description" content="Animation musicale et décoration événementielle.">
+    <meta property="twitter:image" content="https://musicevolution14.fr/logo.webp">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://musicevolution14.fr/contact.html">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav"></nav>
+
+    <!-- Page Header -->
+    <header class="page-header" id="contact-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+            <h1>Contactez-<span class="text-gradient">nous</span></h1>
+            <p>Une question ? Un projet ? Nous sommes là pour vous accompagner.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="reveal-left">
+                    <h3 style="margin-bottom: var(--space-lg);">Demandez votre <span class="text-gradient">devis
+                            gratuit</span></h3>
+
+                    <form class="contact-form" id="contact-form"
+                        action="https://formsubmit.co/musicevolution144@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Nouveau message - Site MusicEvolution14">
+                        <input type="hidden" name="_captcha" value="false"> <!-- Disable captcha for nicer UX -->
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_autoresponse"
+                            value="Bonjour,&#10;&#10;Merci d'avoir contacté MusicEvolution14 !&#10;&#10;Nous avons bien reçu votre demande. Notre équipe va l'étudier avec attention et reviendra vers vous sous 24 à 48 heures pour discuter de votre projet.&#10;&#10;En attendant, n'hésitez pas à nous suivre sur nos réseaux sociaux.&#10;&#10;Musicalement,&#10;L'équipe MusicEvolution14">
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="name">Nom complet *</label>
+                                <input type="text" class="form-input" id="name" name="name" placeholder="Votre nom"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email *</label>
+                                <input type="email" class="form-input" id="email" name="email"
+                                    placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Téléphone *</label>
+                                <input type="tel" class="form-input" id="phone" placeholder="06 00 00 00 00" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="event-type">Type d'événement *</label>
+                                <select class="form-select" id="event-type" name="event-type" required>
+                                    <option value="">Sélectionnez...</option>
+                                    <option value="mariage">Mariage</option>
+                                    <option value="anniversaire">Anniversaire</option>
+                                    <option value="soiree-privee">Soirée privée</option>
+                                    <option value="entreprise">Événement d'entreprise</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-2" style="gap: var(--space-md);">
+                            <div class="form-group">
+                                <label class="form-label" for="date">Date de l'événement (estimée)</label>
+                                <input type="date" class="form-input" id="date" name="date">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="location">Lieu de l'événement</label>
+                                <input type="text" class="form-input" id="location" name="location"
+                                    placeholder="Ville ou salle">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Prestations souhaitées</label>
+                            <div class="checkbox-group"
+                                style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-xs);">
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services[]" value="dj"
+                                        style="accent-color: var(--primary-accent);"> Animation DJ
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services[]" value="deco-interieur"
+                                        style="accent-color: var(--primary-accent);"> Déco intérieure
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services[]" value="deco-exterieur"
+                                        style="accent-color: var(--primary-accent);"> Déco extérieure
+                                </label>
+                                <label
+                                    style="display: flex; align-items: center; gap: var(--space-xs); cursor: pointer; color: var(--text-secondary);">
+                                    <input type="checkbox" name="services[]" value="location"
+                                        style="accent-color: var(--primary-accent);"> Location matériel
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Votre message *</label>
+                            <textarea class="form-textarea" id="message" name="message" rows="5"
+                                placeholder="Décrivez votre projet, vos envies, le nombre d'invités..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" id="submit-btn" style="width: 100%;">
+                            Envoyer ma demande
+                        </button>
+
+                        <!-- Success Message Container -->
+                        <div id="form-message" style="display:none; text-align: center; margin-top: 1rem;"></div>
+
+                        <p
+                            style="text-align: center; margin-top: var(--space-md); color: var(--text-muted); font-size: 0.85rem;">
+                            🔒 Vos informations restent confidentielles et ne seront jamais partagées.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="reveal-right">
+                    <h3 style="margin-bottom: var(--space-lg);">Nos <span class="text-gradient">coordonnées</span></h3>
+
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📍</div>
+                            <div class="contact-info-content">
+                                <h4>Adresse</h4>
+                                <p>Livry, Calvados (14)<br>Basse-Normandie, France</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">📞</div>
+                            <div class="contact-info-content">
+                                <h4>Téléphone</h4>
+                                <a href="tel:+33659949229">06 59 94 92 29</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">✉️</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:musicevolution144@gmail.com">musicevolution144@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">🕐</div>
+                            <div class="contact-info-content">
+                                <h4>Horaires</h4>
+                                <p>Lun - Ven : 9h00 - 19h00<br>Sam : Sur rendez-vous</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div style="margin-top: var(--space-xl);">
+                        <h4 style="margin-bottom: var(--space-md);">Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/MusicEvolution14/?locale=fr_FR" class="social-link"
+                                target="_blank" rel="noopener" aria-label="Facebook">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com" class="social-link" target="_blank" rel="noopener"
+                                aria-label="Instagram">
+                                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor"
+                                        stroke-width="2" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Reassurance -->
+                    <div class="card"
+                        style="margin-top: var(--space-xl); background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02));">
+                        <h4 style="margin-bottom: var(--space-sm);">💬 Réponse rapide garantie</h4>
+                        <p class="card-text">
+                            Nous répondons à toutes les demandes sous 24 à 48h.
+                            Devis personnalisé et accompagnement humain pour votre projet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section" style="background: var(--surface);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="subtitle">Organisation</span>
+                <h2>Votre événement en <span class="text-gradient">4 étapes</span></h2>
+            </div>
+
+            <div class="grid grid-4">
+                <!-- Step 1 -->
+                <div class="roadmap-step reveal stagger-1">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">💡</div>
+                    <h3 class="step-title">1. Premier Contact</h3>
+                    <p class="step-desc">Échange téléphonique ou visio pour cerner vos envies et établir un premier
+                        devis estimatif.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step reveal stagger-2">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🤝</div>
+                    <h3 class="step-title">2. Rencontre</h3>
+                    <p class="step-desc">Rendez-vous physique ou sur le lieu de l'événement pour affiner les détails et
+                        la décoration.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step reveal stagger-3">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">3. Validation</h3>
+                    <p class="step-desc">Signature du contrat, versement de l'acompte et validation finale du déroulé de
+                        la prestation.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="roadmap-step reveal stagger-4">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">✨</div>
+                    <h3 class="step-title">4. Jour J</h3>
+                    <p class="step-desc">Installation, coordination et animation. Profitez de votre événement, on
+                        s'occupe de tout !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="zone-map reveal" style="height: 400px;">
+                <iframe src="https://maps.google.com/maps?q=loc:49.1052,-0.7736&z=15&output=embed" width="100%"
+                    height="100%" style="border:0; border-radius: var(--radius-lg);" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" style="background: var(--surface);">
+        <div class="container container-sm">
+            <div class="section-header reveal">
+                <span class="subtitle">FAQ</span>
+                <h2>Questions <span class="text-gradient">fréquentes</span></h2>
+            </div>
+
+            <div class="faq-container reveal">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment se passe un premier contact ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Après réception de votre demande, nous vous recontactons pour discuter de votre projet,
+                            comprendre vos besoins et vous proposer un devis personnalisé sans engagement.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quel est votre périmètre d'intervention ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Nous intervenons principalement dans le Calvados et les départements limitrophes (Manche,
+                            Orne, Eure, Seine-Maritime). Pour des événements plus éloignés, n'hésitez pas à nous
+                            consulter.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Proposez-vous du matériel de sonorisation et d'éclairage ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui, nous disposons de notre propre parc matériel professionnel haut de gamme. Tout est
+                            inclus dans nos prestations : sonorisation adaptée au lieu, éclairage de piste, mise en
+                            lumière architecturale, etc.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Pouvons-nous personnaliser la playlist musicale ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolument ! C'est votre événement. Nous définissons ensemble vos styles préférés et ceux à
+                            éviter (black-list). Nous nous adaptons à vos goûts tout en assurant l'ambiance pour tous
+                            vos invités.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Quelles sont les modalités de réservation ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Pour bloquer la date, un contrat est établi et un acompte de 30% est demandé. Le solde est à
+                            régler au plus tard le jour de l'événement. Nous vous conseillons de réserver 6 à 12 mois à
+                            l'avance, surtout pour la saison estivale.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Est-il possible de prolonger la prestation ?
+                        <span class="faq-toggle"></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Oui, nous pouvons prolonger l'animation au-delà de l'heure initialement prévue. Les heures
+                            supplémentaires sont facturées selon le tarif en vigueur indiqué dans votre contrat.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <script src="script.js?v=4"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{
+    "kind": "collectionType",
+    "collectionName": "testimonials",
+    "info": {
+        "singularName": "testimonial",
+        "pluralName": "testimonials",
+        "displayName": "Testimonial",
+        "description": "Client reviews and testimonials"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "author": {
+            "type": "string",
+            "required": true
+        },
+        "content": {
+            "type": "text",
+            "required": true
+        },
+        "rating": {
+            "type": "integer",
+            "min": 1,
+            "max": 5,
+            "default": 5,
+            "required": true
+        },
+        "eventContext": {
+            "type": "string",
+            "required": false,
+            "description": "Ex: Mariage - Juin 2024"
+        }
+    }
+}

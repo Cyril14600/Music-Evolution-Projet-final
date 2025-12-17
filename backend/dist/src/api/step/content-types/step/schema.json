@@ -1,0 +1,32 @@
+{
+    "kind": "collectionType",
+    "collectionName": "steps",
+    "info": {
+        "singularName": "step",
+        "pluralName": "steps",
+        "displayName": "Step",
+        "description": "Organization steps shown on Contact page"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "stepNumber": {
+            "type": "string",
+            "required": true
+        },
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text",
+            "required": true
+        },
+        "icon": {
+            "type": "string",
+            "required": true
+        }
+    }
+}

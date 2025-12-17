@@ -45,7 +45,7 @@ export default function RootLayout({
             <PageAnimations />
             <Header />
             <PageTransition>
-              {children}
+              <main>{children}</main>
             </PageTransition>
             <Footer />
             <ScrollToTop />

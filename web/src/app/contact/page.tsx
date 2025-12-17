@@ -101,7 +101,7 @@ export default function ContactPage() {
                     <div className="contact-grid">
                         {/* Contact Form */}
                         <div className="reveal-left">
-                            <h3 style={{ marginBottom: 'var(--space-lg)' }}>Demandez votre <span className="text-gradient">devis gratuit</span></h3>
+                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>Demandez votre <span className="text-gradient">devis gratuit</span></h2>
 
                             {status === 'success' ? (
                                 <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
@@ -202,7 +202,7 @@ export default function ContactPage() {
 
                         {/* Contact Info */}
                         <div className="reveal-right">
-                            <h3 style={{ marginBottom: 'var(--space-lg)' }}>Nos <span className="text-gradient">coordonnées</span></h3>
+                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>Nos <span className="text-gradient">coordonnées</span></h2>
 
                             <div className="contact-info">
                                 <div className="contact-info-item">
@@ -315,7 +315,7 @@ export default function ContactPage() {
             <section className="section" style={{ paddingTop: 0 }}>
                 <div className="container">
                     <div className="zone-map reveal">
-                        <iframe src="https://maps.google.com/maps?q=loc:49.1052,-0.7736&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Carte de localisation" src="https://maps.google.com/maps?q=loc:49.1052,-0.7736&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </section>

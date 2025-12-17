@@ -49,7 +49,7 @@ export default function GalleryGrid() {
                     >
                         <Image
                             src={item.image}
-                            alt={item.title}
+                            alt={`Aperçu : ${item.title}`}
                             fill
                             unoptimized={true}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

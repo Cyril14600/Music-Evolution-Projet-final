@@ -6,12 +6,16 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useGalleryData, GalleryItem } from '@/hooks/useGalleryData';
 import GalleryFilters from './GalleryFilters';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useEffect, useRef } from 'react';
 
 export default function GalleryGrid() {
     const { items, isLoading } = useGalleryData();
     const [filter, setFilter] = useState('all');
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const gridRef = useRef<HTMLDivElement>(null);
 
     // Filtered items
     const filteredItems = filter === 'all'
@@ -36,15 +40,33 @@ export default function GalleryGrid() {
         setCurrentImageIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
     };
 
+    // Re-run animations when items change (filtering)
+    useEffect(() => {
+        if (!gridRef.current) return;
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".gallery-item-anim",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: "power2.out", overwrite: true }
+            );
+        }, gridRef);
+
+        return () => ctx.revert();
+    }, [filteredItems]);
+
+    // Import gsap dynamically or use window if available? No, we have gsap imported in PageAnimations, let's import it here.
+    // Wait, need to add import gsap.
+
+
     return (
         <>
             <GalleryFilters currentFilter={filter} onFilterChange={setFilter} />
 
-            <div className="gallery-grid">
+            <div className="gallery-grid" ref={gridRef}>
                 {filteredItems.map((item, index) => (
                     <div
                         key={`${item.id}-${index}`}
-                        className="gallery-item reveal"
+                        className="gallery-item gallery-item-anim" // Removed 'reveal' to avoid conflict with global PageAnimations
                         onClick={() => openLightbox(index)}
                     >
                         <Image

@@ -65,6 +65,15 @@ export async function POST(request: Request) {
       ${message}
     `;
 
+        // Explicit Check for Env Vars
+        if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS) {
+            console.error('CRITICAL: Missing Email Credentials');
+            return NextResponse.json(
+                { error: 'Configuration Erreur: Les variables GMAIL_USER ou GMAIL_PASS sont manquantes sur le serveur.' },
+                { status: 500 }
+            );
+        }
+
         console.log('--- PRÉPARATION ENVOI GMAIL ---');
         console.log('Debug Creds:', {
             hasUser: !!process.env.GMAIL_USER,

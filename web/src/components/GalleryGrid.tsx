@@ -49,6 +49,12 @@ export default function GalleryGrid() {
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.5, stagger: 0.05, ease: "power2.out", overwrite: true }
             );
+
+            // Refresh ScrollTrigger to ensure following sections (like CTA) update their positions
+            // Timeout to allow DOM to settle
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
         }, gridRef);
 
         return () => ctx.revert();

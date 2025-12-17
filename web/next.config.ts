@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
         hostname: '127.0.0.1',
         port: '1337',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'music-evolution-projet-final-production.up.railway.app',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

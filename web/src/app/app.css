@@ -108,6 +108,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-accent) var(--primary-dark);
 }
 
 html.lenis {

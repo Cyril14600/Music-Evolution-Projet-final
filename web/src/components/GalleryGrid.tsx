@@ -16,7 +16,7 @@ export default function GalleryGrid() {
     // Filtered items
     const filteredItems = filter === 'all'
         ? items
-        : items.filter(item => item.category === filter);
+        : items.filter(item => item.category?.toLowerCase() === filter.toLowerCase());
 
     // Lightbox handlers
     const openLightbox = (index: number) => {

@@ -49,7 +49,7 @@ export function useGalleryData() {
 
                         return {
                             id: item.id,
-                            category: props.category,
+                            category: props.category?.toLowerCase() || 'mariage',
                             title: props.title,
                             categoryLabel: props.categoryLabel,
                             image: imageUrl

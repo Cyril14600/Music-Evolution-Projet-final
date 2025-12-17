@@ -66,6 +66,12 @@ export async function POST(request: Request) {
     `;
 
         console.log('--- PRÉPARATION ENVOI GMAIL ---');
+        console.log('Debug Creds:', {
+            hasUser: !!process.env.GMAIL_USER,
+            hasPass: !!process.env.GMAIL_PASS,
+            userLength: process.env.GMAIL_USER?.length,
+            passLength: process.env.GMAIL_PASS?.length
+        });
 
         // Create Transporter
         const transporter = nodemailer.createTransport({

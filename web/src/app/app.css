@@ -912,6 +912,11 @@ p {
   transition: var(--transition-base);
 }
 
+.form-select option {
+  background-color: var(--primary-dark);
+  color: var(--text-primary);
+}
+
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {

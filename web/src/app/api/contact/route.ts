@@ -5,11 +5,16 @@ import { headers } from 'next/headers';
 // Simple in-memory rate limiter (resets on server restart)
 const rateLimitMap = new Map();
 
+
 export async function POST(request: Request) {
     try {
         // Rate Limiting Logic
         const headersList = await headers();
         const ip = headersList.get('x-forwarded-for') || 'unknown';
+
+        // Determine origin for images
+        const origin = new URL(request.url).origin;
+
         const limit = 3; // Max emails per hour
         const windowMs = 60 * 60 * 1000; // 1 hour
 
@@ -117,7 +122,7 @@ export async function POST(request: Request) {
             html: `
                 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
                     <div style="background-color: #111; padding: 40px 20px; text-align: center;">
-                        <img src="https://musicevolution14.com/logo.webp" alt="MusicEvolution14" style="width: 150px; height: auto; display: block; margin: 0 auto;" />
+                        <img src="${origin}/logo.webp" alt="MusicEvolution14" style="width: 150px; height: auto; display: block; margin: 0 auto;" />
                         <h1 style="color: #D4AF37; margin-top: 20px; font-size: 20px; font-weight: 300; letter-spacing: 2px; text-transform: uppercase;">MusicEvolution14</h1>
                     </div>
                     <div style="padding: 40px; background-color: #fff;">

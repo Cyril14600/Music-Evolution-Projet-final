@@ -423,10 +423,13 @@ p {
     justify-content: center;
     gap: var(--space-xl);
     transition: var(--transition-smooth);
+    visibility: hidden;
+    /* Hide from accessibility tree */
   }
 
   .nav-menu.active {
     right: 0;
+    visibility: visible;
   }
 
   .nav-link {

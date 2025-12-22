@@ -57,8 +57,8 @@ async function getPageData() {
         return {
             contactPage: contactPageRes?.data?.attributes as ContactPageData | null,
             global: globalRes?.data?.attributes as GlobalData | null,
-            faqs: faqsRes?.data as Array<{ id: number; attributes: FaqItem }> | null,
-            steps: stepsRes?.data as Array<{ id: number; attributes: StepItem }> | null,
+            faqs: faqsRes?.data as Array<{ id: number; attributes: Omit<FaqItem, 'id'> }> | null,
+            steps: stepsRes?.data as Array<{ id: number; attributes: Omit<StepItem, 'id'> }> | null,
         };
     } catch (err) {
         console.error("Error fetching contact page data:", err);

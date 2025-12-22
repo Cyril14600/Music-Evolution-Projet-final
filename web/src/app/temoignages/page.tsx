@@ -49,7 +49,7 @@ const fallbackTestimonials = [
 
 async function getTestimonials() {
     try {
-        const data = await fetchAPI('/testimonials', { sort: ['createdAt:desc'], populate: '*' });
+        const data = await fetchAPI('/testimonials', { sort: ['createdAt:desc'], populate: '*' }, { cache: 'no-store' });
         console.log("Fetched Testimonials Data:", data); // Debug log
 
         if (!data || !data.data) {

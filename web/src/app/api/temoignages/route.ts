@@ -3,8 +3,15 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
     try {
-        const body = await request.json();
-        const { firstName, lastName, email, date, eventType, rating, message } = body;
+        const formData = await request.formData();
+        const firstName = formData.get('firstName') as string;
+        const lastName = formData.get('lastName') as string;
+        const email = formData.get('email') as string;
+        const date = formData.get('date') as string;
+        const eventType = formData.get('eventType') as string;
+        const rating = formData.get('rating') as string;
+        const message = formData.get('message') as string;
+        const photo = formData.get('photo') as File | null;
 
         // Simple Validation
         if (!firstName || !lastName || !email || !message || !rating) {
@@ -24,7 +31,17 @@ export async function POST(request: Request) {
       
       Témoignage:
       "${message}"
+
     `;
+
+        let attachments = [];
+        if (photo && photo.size > 0 && photo.name) {
+            const buffer = Buffer.from(await photo.arrayBuffer());
+            attachments.push({
+                filename: photo.name,
+                content: buffer,
+            });
+        }
 
         console.log('--- PRÉPARATION ENVOI TÉMOIGNAGE GMAIL ---');
 
@@ -45,6 +62,7 @@ export async function POST(request: Request) {
             replyTo: email,
             subject: `Nouveau Témoignage: ${rating}/5 de ${firstName} ${lastName}`,
             text: emailContent,
+            attachments: attachments,
         });
 
         console.log('--- TÉMOIGNAGE ENVOYÉ ---');

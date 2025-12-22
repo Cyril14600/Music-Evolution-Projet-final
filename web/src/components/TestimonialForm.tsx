@@ -11,23 +11,18 @@ export default function TestimonialForm() {
         e.preventDefault();
         setIsLoading(true);
 
-
         const formData = new FormData(e.currentTarget);
-        const data = {
-            firstName: formData.get('firstName'),
-            lastName: formData.get('lastName'),
-            email: formData.get('email'),
-            date: formData.get('date'),
-            eventType: formData.get('eventType'),
-            rating: formData.get('rating'),
-            message: formData.get('message'),
-        };
+
+
+
+        // Form data is automatically collected from inputs with 'name' attributes
+        // We can just send the formData directly
 
         try {
             const response = await fetch('/api/temoignages', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
+                // Content-Type header is NOT set here so the browser can set the multipart boundary
+                body: formData,
             });
 
             const result = await response.json();
@@ -98,6 +93,14 @@ export default function TestimonialForm() {
                         <input type="radio" id="star1" name="rating" value="1" />
                         <label htmlFor="star1">★</label>
                     </div>
+                </div>
+
+                <div className="form-group">
+                    <label className="form-label" htmlFor="photo">Photo (optionnel)</label>
+                    <input type="file" className="form-input" id="photo" name="photo" accept="image/*" disabled={isLoading} />
+                    <small style={{ color: 'var(--text-muted)', display: 'block', marginTop: '0.5rem' }}>
+                        Formats acceptés : JPG, PNG, WEBP.
+                    </small>
                 </div>
 
                 <div className="form-group">

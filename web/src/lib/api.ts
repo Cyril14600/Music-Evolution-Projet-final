@@ -5,6 +5,20 @@ export function getStrapiURL(path = '') {
         }${path}`;
 }
 
+export function getStrapiMedia(url: string | null) {
+    if (url == null) {
+        return null;
+    }
+
+    // Return the full URL if the media is hosted on an external provider
+    if (url.startsWith('http') || url.startsWith('//')) {
+        return url;
+    }
+
+    // Otherwise prepend the Strapi URL
+    return `${getStrapiURL()}${url}`;
+}
+
 export async function fetchAPI(path: string, urlParamsObject = {}, options = {}) {
     try {
         // Merge default and user options
@@ -21,6 +35,11 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {})
             next: { revalidate: 60 }, // Default ISR: 60 seconds
             ...options,
         };
+
+        // Resolve conflict: cache: 'no-store' cannot be used with next: { revalidate }
+        if ((options as RequestInit).cache === 'no-store') {
+            delete (mergedOptions as any).next;
+        }
 
         // Build request URL
         const queryString = qs.stringify(urlParamsObject);

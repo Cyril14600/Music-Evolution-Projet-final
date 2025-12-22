@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import servicesData from '../../data/services.json';
-import { fetchAPI } from '@/lib/api';
+import { fetchAPI, getStrapiURL } from '@/lib/api';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,6 +13,25 @@ interface Service {
     icon: string;
     title: string;
     description: string;
+}
+
+interface FeatureSection {
+    title: string;
+    description: string;
+    features: { icon: string; text: string }[];
+    image?: {
+        data: {
+            attributes: {
+                url: string;
+            }
+        }
+    }
+}
+
+interface PrestationsPageData {
+    animationSection: FeatureSection;
+    decorIntSection: FeatureSection;
+    decorExtSection: FeatureSection;
 }
 
 async function getServices(): Promise<Service[]> {
@@ -27,9 +46,65 @@ async function getServices(): Promise<Service[]> {
     return [];
 }
 
+async function getPrestationsPageData(): Promise<PrestationsPageData | null> {
+    const data = await fetchAPI('/prestations-page', {
+        populate: {
+            animationSection: { populate: { features: true, image: true } },
+            decorIntSection: { populate: { features: true, image: true } },
+            decorExtSection: { populate: { features: true, image: true } }
+        }
+    }, { cache: 'no-store' });
+
+    return data?.data?.attributes || null;
+}
+
 export default async function Prestations() {
     const apiServices = await getServices();
     const services: Service[] = apiServices.length > 0 ? apiServices : servicesData;
+    const pageData = await getPrestationsPageData();
+
+    // Fallback Data
+    const animationSection = pageData?.animationSection || {
+        title: "Animation Musicale",
+        description: "Notre DJ professionnel transforme vos événements en véritables fêtes inoubliables. Avec un équipement de sonorisation haut de gamme et des jeux de lumière spectaculaires, nous créons l'ambiance parfaite pour faire vibrer vos invités.",
+        features: [
+            { icon: "🎧", text: "DJ Professionnel\nExpérimenté et à l'écoute de vos goûts musicaux" },
+            { icon: "🔊", text: "Sonorisation Pro\nMatériel haute qualité adapté à votre espace" },
+            { icon: "💡", text: "Jeux de Lumière\nEffets LED, lasers, stroboscopes" },
+            { icon: "🎵", text: "Playlist Personnalisée\nTous styles : variété, rock, électro, années 80..." }
+        ],
+        image: null // Will fall back to hardcoded path
+    };
+
+    const decorIntSection = pageData?.decorIntSection || {
+        title: "Décoration Intérieure",
+        description: "Transformez n'importe quelle salle en un espace féerique qui reflète votre personnalité. De la décoration de table aux arches fleuries, nous créons une atmosphère enchanteresse qui émerveillera vos invités dès leur arrivée.",
+        features: [
+            { icon: "🌸", text: "Centres de Tables\nCompositions florales et décoratives élégantes" },
+            { icon: "🎀", text: "Housses & Nappes\nHabillage complet du mobilier" },
+            { icon: "🏛️", text: "Arches & Structures\nArches florales, mur de fleurs, backdrops" },
+            { icon: "✨", text: "Décor Thématique\nPersonnalisation selon votre thème" }
+        ],
+        image: null
+    };
+
+    const decorExtSection = pageData?.decorExtSection || {
+        title: "Décoration Extérieure",
+        description: "Sublimez vos jardins, terrasses et espaces en plein air avec nos mises en lumière artistiques et nos décorations végétales. Créez une atmosphère magique qui perdurera bien après le coucher du soleil.",
+        features: [
+            { icon: "💫", text: "Guirlandes Lumineuses\nLED blanches chaudes, multicolores" },
+            { icon: "🔦", text: "Spots & Éclairages\nMise en lumière des arbres et structures" },
+            { icon: "🏮", text: "Lanternes & Bougies\nAmbiance romantique et chaleureuse" },
+            { icon: "🌿", text: "Décor Végétal\nPlantes, fleurs et compositions naturelles" }
+        ],
+        image: null
+    };
+
+    // Helper to get image URL
+    const getImageUrl = (sectionImage: any, hardcodedPath: string) => {
+        const strapiUrl = sectionImage?.data?.attributes?.url;
+        return strapiUrl ? getStrapiURL(strapiUrl) : hardcodedPath;
+    };
 
     return (
         <>
@@ -51,51 +126,34 @@ export default async function Prestations() {
                     <div className="about-intro">
                         <div className="about-intro-image reveal-left">
                             <Image
-                                src="/images/358645861_763506185775582_5987152981800305572_n.webp"
-                                alt="Animation musicale DJ"
+                                src={getImageUrl(animationSection.image, "/images/358645861_763506185775582_5987152981800305572_n.webp")}
+                                alt={animationSection.title}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="(max-width: 968px) 100vw, 50vw"
+                                unoptimized
                             />
                         </div>
                         <div className="reveal-right">
                             <span className="subtitle" style={{ display: 'block', marginBottom: 'var(--space-sm)' }}>Animation</span>
-                            <h2>Animation <span className="text-gradient">Musicale</span></h2>
+                            <h2><span className="text-gradient">{animationSection.title}</span></h2>
                             <p style={{ margin: 'var(--space-md) 0' }}>
-                                Notre DJ professionnel transforme vos événements en véritables fêtes inoubliables.
-                                Avec un équipement de sonorisation haut de gamme et des jeux de lumière spectaculaires,
-                                nous créons l{"'"}ambiance parfaite pour faire vibrer vos invités.
+                                {animationSection.description}
                             </p>
 
                             <div className="grid grid-2" style={{ gap: 'var(--space-md)', marginTop: 'var(--space-lg)' }}>
-                                <div className="value-item">
-                                    <div className="value-icon">🎧</div>
-                                    <div>
-                                        <h4>DJ Professionnel</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Expérimenté et à l{"'"}écoute de vos goûts musicaux</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🔊</div>
-                                    <div>
-                                        <h4>Sonorisation Pro</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Matériel haute qualité adapté à votre espace</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">💡</div>
-                                    <div>
-                                        <h4>Jeux de Lumière</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Effets LED, lasers, stroboscopes</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🎵</div>
-                                    <div>
-                                        <h4>Playlist Personnalisée</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Tous styles : variété, rock, électro, années 80...</p>
-                                    </div>
-                                </div>
+                                {animationSection.features.map((feature: any, idx: number) => {
+                                    const [title, desc] = feature.text.includes('\n') ? feature.text.split('\n') : [feature.text, ''];
+                                    return (
+                                        <div className="value-item" key={idx}>
+                                            <div className="value-icon">{feature.icon}</div>
+                                            <div>
+                                                <h4>{title}</h4>
+                                                {desc && <p style={{ fontSize: '0.9rem' }}>{desc}</p>}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
                             <Link href="/contact" className="btn btn-primary" style={{ marginTop: 'var(--space-xl)' }}>Demander un devis</Link>
@@ -111,51 +169,34 @@ export default async function Prestations() {
                         {/* Text Reversing for layout */}
                         <div className="about-intro-image reveal-right" style={{ direction: 'ltr' }}>
                             <Image
-                                src="/images/503173606_2892903777577679_1151030800917129172_n.webp"
-                                alt="Décoration intérieure"
+                                src={getImageUrl(decorIntSection.image, "/images/503173606_2892903777577679_1151030800917129172_n.webp")}
+                                alt={decorIntSection.title}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="(max-width: 968px) 100vw, 50vw"
+                                unoptimized
                             />
                         </div>
                         <div className="reveal-left" style={{ direction: 'ltr' }}>
                             <span className="subtitle" style={{ display: 'block', marginBottom: 'var(--space-sm)' }}>Décoration</span>
-                            <h2>Décoration <span className="text-gradient">Intérieure</span></h2>
+                            <h2><span className="text-gradient">{decorIntSection.title}</span></h2>
                             <p style={{ margin: 'var(--space-md) 0' }}>
-                                Transformez n{"'"}importe quelle salle en un espace féerique qui reflète votre personnalité.
-                                De la décoration de table aux arches fleuries, nous créons une atmosphère enchanteresse
-                                qui émerveillera vos invités dès leur arrivée.
+                                {decorIntSection.description}
                             </p>
 
                             <div className="grid grid-2" style={{ gap: 'var(--space-md)', marginTop: 'var(--space-lg)' }}>
-                                <div className="value-item">
-                                    <div className="value-icon">🌸</div>
-                                    <div>
-                                        <h4>Centres de Tables</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Compositions florales et décoratives élégantes</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🎀</div>
-                                    <div>
-                                        <h4>Housses & Nappes</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Habillage complet du mobilier</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🏛️</div>
-                                    <div>
-                                        <h4>Arches & Structures</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Arches florales, mur de fleurs, backdrops</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">✨</div>
-                                    <div>
-                                        <h4>Décor Thématique</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Personnalisation selon votre thème</p>
-                                    </div>
-                                </div>
+                                {decorIntSection.features.map((feature: any, idx: number) => {
+                                    const [title, desc] = feature.text.includes('\n') ? feature.text.split('\n') : [feature.text, ''];
+                                    return (
+                                        <div className="value-item" key={idx}>
+                                            <div className="value-icon">{feature.icon}</div>
+                                            <div>
+                                                <h4>{title}</h4>
+                                                {desc && <p style={{ fontSize: '0.9rem' }}>{desc}</p>}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
                             <Link href="/contact" className="btn btn-primary" style={{ marginTop: 'var(--space-xl)' }}>Demander un devis</Link>
@@ -170,51 +211,34 @@ export default async function Prestations() {
                     <div className="about-intro">
                         <div className="about-intro-image reveal-left">
                             <Image
-                                src="/images/486670200_1237951618331034_7657288755883605121_n.webp"
-                                alt="Décoration extérieure"
+                                src={getImageUrl(decorExtSection.image, "/images/486670200_1237951618331034_7657288755883605121_n.webp")}
+                                alt={decorExtSection.title}
                                 fill
                                 style={{ objectFit: 'cover' }}
                                 sizes="(max-width: 968px) 100vw, 50vw"
+                                unoptimized
                             />
                         </div>
                         <div className="reveal-right">
                             <span className="subtitle" style={{ display: 'block', marginBottom: 'var(--space-sm)' }}>Décoration</span>
-                            <h2>Décoration <span className="text-gradient">Extérieure</span></h2>
+                            <h2><span className="text-gradient">{decorExtSection.title}</span></h2>
                             <p style={{ margin: 'var(--space-md) 0' }}>
-                                Sublimez vos jardins, terrasses et espaces en plein air avec nos mises en lumière
-                                artistiques et nos décorations végétales. Créez une atmosphère magique
-                                qui perdurera bien après le coucher du soleil.
+                                {decorExtSection.description}
                             </p>
 
                             <div className="grid grid-2" style={{ gap: 'var(--space-md)', marginTop: 'var(--space-lg)' }}>
-                                <div className="value-item">
-                                    <div className="value-icon">💫</div>
-                                    <div>
-                                        <h4>Guirlandes Lumineuses</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>LED blanches chaudes, multicolores</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🔦</div>
-                                    <div>
-                                        <h4>Spots & Éclairages</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Mise en lumière des arbres et structures</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🏮</div>
-                                    <div>
-                                        <h4>Lanternes & Bougies</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Ambiance romantique et chaleureuse</p>
-                                    </div>
-                                </div>
-                                <div className="value-item">
-                                    <div className="value-icon">🌿</div>
-                                    <div>
-                                        <h4>Décor Végétal</h4>
-                                        <p style={{ fontSize: '0.9rem' }}>Plantes, fleurs et compositions naturelles</p>
-                                    </div>
-                                </div>
+                                {decorExtSection.features.map((feature: any, idx: number) => {
+                                    const [title, desc] = feature.text.includes('\n') ? feature.text.split('\n') : [feature.text, ''];
+                                    return (
+                                        <div className="value-item" key={idx}>
+                                            <div className="value-icon">{feature.icon}</div>
+                                            <div>
+                                                <h4>{title}</h4>
+                                                {desc && <p style={{ fontSize: '0.9rem' }}>{desc}</p>}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
 
                             <Link href="/contact" className="btn btn-primary" style={{ marginTop: 'var(--space-xl)' }}>Demander un devis</Link>

@@ -1,0 +1,48 @@
+{
+    "kind": "singleType",
+    "collectionName": "contact_pages",
+    "info": {
+        "singularName": "contact-page",
+        "pluralName": "contact-pages",
+        "displayName": "Contact Page",
+        "description": "Content for the Contact page titles and intros"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": false
+        },
+        "introText": {
+            "type": "text",
+            "required": false
+        },
+        "formTitle": {
+            "type": "string",
+            "required": false
+        },
+        "infoTitle": {
+            "type": "string",
+            "required": false
+        },
+        "reassuranceTitle": {
+            "type": "string",
+            "required": false
+        },
+        "reassuranceText": {
+            "type": "text",
+            "required": false
+        },
+        "faqTitle": {
+            "type": "string",
+            "required": false
+        },
+        "stepsTitle": {
+            "type": "string",
+            "required": false
+        }
+    }
+}

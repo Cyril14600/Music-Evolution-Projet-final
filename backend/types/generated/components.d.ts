@@ -20,8 +20,8 @@ export interface SectionsFeatureItem extends Struct.ComponentSchema {
     displayName: 'Feature Item';
   };
   attributes: {
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.String;
+    text: Schema.Attribute.String;
   };
 }
 
@@ -35,7 +35,7 @@ export interface SectionsFeatureSection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     features: Schema.Attribute.Component<'sections.feature-item', true>;
     image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String;
   };
 }
 

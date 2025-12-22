@@ -430,6 +430,80 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_pages';
+  info: {
+    description: 'Content for the About (Qui sommes-nous) page';
+    displayName: 'About Page';
+    pluralName: 'about-pages';
+    singularName: 'about-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    approachSection: Schema.Attribute.Component<
+      'sections.feature-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    introSection: Schema.Attribute.Component<'sections.feature-section', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-page.about-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    valuesSection: Schema.Attribute.Component<
+      'sections.feature-section',
+      false
+    >;
+    whyUsSection: Schema.Attribute.Component<'sections.feature-section', false>;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    description: 'Content for the Contact page titles and intros';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    faqTitle: Schema.Attribute.String;
+    formTitle: Schema.Attribute.String;
+    infoTitle: Schema.Attribute.String;
+    introText: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    reassuranceText: Schema.Attribute.Text;
+    reassuranceTitle: Schema.Attribute.String;
+    stepsTitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   collectionName: 'faqs';
   info: {
@@ -574,6 +648,42 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLocationItemLocationItem
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'location_items';
+  info: {
+    description: 'Items for rent on the locations page';
+    displayName: 'Location Item';
+    pluralName: 'location-items';
+    singularName: 'location-item';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    category: Schema.Attribute.Enumeration<['decorations', 'mobiliers']> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-item.location-item'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
   collectionName: 'partners';
   info: {
@@ -597,6 +707,47 @@ export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrestationsPagePrestationsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'prestations_pages';
+  info: {
+    description: 'Content for the Prestations page';
+    displayName: 'Prestations Page';
+    pluralName: 'prestations-pages';
+    singularName: 'prestations-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    animationSection: Schema.Attribute.Component<
+      'sections.feature-section',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    decorExtSection: Schema.Attribute.Component<
+      'sections.feature-section',
+      false
+    >;
+    decorIntSection: Schema.Attribute.Component<
+      'sections.feature-section',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::prestations-page.prestations-page'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -687,6 +838,7 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     eventContext: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1220,11 +1372,15 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::faq.faq': ApiFaqFaq;
       'api::gallery-item.gallery-item': ApiGalleryItemGalleryItem;
       'api::global.global': ApiGlobalGlobal;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::location-item.location-item': ApiLocationItemLocationItem;
       'api::partner.partner': ApiPartnerPartner;
+      'api::prestations-page.prestations-page': ApiPrestationsPagePrestationsPage;
       'api::service.service': ApiServiceService;
       'api::step.step': ApiStepStep;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

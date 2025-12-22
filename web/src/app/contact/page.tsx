@@ -1,14 +1,100 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import faqData from '../../data/faq.json';
 import stepsData from '../../data/steps.json';
 import contactData from '../../data/contact.json';
 import { useToast } from '@/context/ToastContext';
+import { fetchAPI, getStrapiURL } from '@/lib/api';
+import AvailabilityBlock from '@/components/AvailabilityBlock';
+
+// Interfaces for Strapi Data
+interface ContactPageData {
+    title?: string;
+    introText?: string;
+    formTitle?: string;
+    infoTitle?: string;
+    reassuranceTitle?: string;
+    reassuranceText?: string;
+    faqTitle?: string;
+    stepsTitle?: string;
+}
+
+interface GlobalData {
+    siteName?: string;
+    contactEmail?: string;
+    contactPhone?: string;
+    contactAddress?: string;
+    facebookUrl?: string;
+    instagramUrl?: string;
+}
+
+interface FaqItem {
+    id: number;
+    question: string;
+    answer: string;
+}
+
+interface StepItem {
+    id: number;
+    stepNumber: string;
+    title: string;
+    description: string;
+    icon: string;
+}
+
+// Function to fetch all data safely
+async function getPageData() {
+    try {
+        const [contactPageRes, globalRes, faqsRes, stepsRes] = await Promise.all([
+            fetchAPI('/contact-page', { populate: '*' }, { cache: 'no-store' }),
+            fetchAPI('/global', { populate: '*' }, { cache: 'no-store' }),
+            fetchAPI('/faqs', { sort: 'id:asc' }, { cache: 'no-store' }),
+            fetchAPI('/steps', { sort: 'stepNumber:asc' }, { cache: 'no-store' })
+        ]);
+
+        return {
+            contactPage: contactPageRes?.data?.attributes as ContactPageData | null,
+            global: globalRes?.data?.attributes as GlobalData | null,
+            faqs: faqsRes?.data as Array<{ id: number; attributes: FaqItem }> | null,
+            steps: stepsRes?.data as Array<{ id: number; attributes: StepItem }> | null,
+        };
+    } catch (err) {
+        console.error("Error fetching contact page data:", err);
+        return { contactPage: null, global: null, faqs: null, steps: null };
+    }
+}
 
 export default function ContactPage() {
     const toast = useToast();
+
+    // State for data
+    const [fetchedData, setFetchedData] = useState<{
+        contactPage: ContactPageData | null;
+        global: GlobalData | null;
+        faqs: FaqItem[] | null;
+        steps: StepItem[] | null;
+    }>({ contactPage: null, global: null, faqs: null, steps: null });
+
+    const [isLoadingData, setIsLoadingData] = useState(true);
+
+    // Fetch data on mount
+    useEffect(() => {
+        async function load() {
+            const data = await getPageData();
+            setFetchedData({
+                contactPage: data.contactPage,
+                global: data.global,
+                faqs: data.faqs?.map(f => ({ id: f.id, ...f.attributes })) || null,
+                steps: data.steps?.map(s => ({ id: s.id, ...s.attributes })) || null
+            });
+            setIsLoadingData(false);
+        }
+        load();
+    }, []);
+
+    // Form fetch state
     const [formData, setFormData] = useState({
         name: '',
         firstName: '',
@@ -56,7 +142,7 @@ export default function ContactPage() {
             const data = await res.json();
 
             if (res.ok) {
-                setStatus('idle'); // Reset status to allow re-submission if needed, or keep 'success' but use toast
+                setStatus('idle');
                 toast.success("Message envoyé ! Nous vous répondrons sous 24-48h.");
                 setFormData({
                     name: '', firstName: '', email: '', phone: '', guests: '', eventType: 'Mariage', date: '', location: '', services: [], message: ''
@@ -80,6 +166,46 @@ export default function ContactPage() {
         setOpenFaq(openFaq === index ? null : index);
     };
 
+    // Prepare Display Data (Merge Strapi with Fallback)
+    const { contactPage, global, faqs, steps } = fetchedData;
+
+    // Contact Info Fallback/Merge
+    const displayContact = {
+        address: global?.contactAddress ? { ...contactData.address, lines: global.contactAddress.split('\n') } : contactData.address,
+        phone: global?.contactPhone ? { ...contactData.phone, number: global.contactPhone, link: `tel:${global.contactPhone.replace(/\s/g, '')}` } : contactData.phone,
+        email: global?.contactEmail ? { ...contactData.email, address: global.contactEmail, link: `mailto:${global.contactEmail}` } : contactData.email,
+        hours: contactData.hours, // Hours not yet in Strapi Global, generic fallback
+        socials: global ? [
+            global.facebookUrl ? { ...contactData.socials[0], url: global.facebookUrl } : contactData.socials[0],
+            global.instagramUrl ? { ...contactData.socials[1], url: global.instagramUrl } : contactData.socials[1]
+        ] : contactData.socials
+    };
+
+    // FAQ Fallback
+    const displayFaq = (faqs && faqs.length > 0) ? faqs.map(f => ({ q: f.question, a: f.answer })) : faqData;
+
+    // Steps Fallback
+    const displaySteps = (steps && steps.length > 0) ? steps.map(s => ({
+        step: s.stepNumber,
+        icon: s.icon,
+        title: s.title,
+        desc: s.description
+    })) : stepsData;
+
+    const pageTitle = contactPage?.title || "Contactez-nous";
+    const pageIntro = contactPage?.introText || "Une question ? Un projet ? Nous sommes là pour vous accompagner.";
+
+    // Splitting title for gradient effect if it exists and has space
+    const renderTitle = (title: string) => {
+        if (!title.includes(' ')) return <span className="text-gradient">{title}</span>;
+        const lastSpace = title.lastIndexOf(' ');
+        return (
+            <>
+                {title.substring(0, lastSpace)} <span className="text-gradient">{title.substring(lastSpace + 1)}</span>
+            </>
+        );
+    };
+
     return (
         <>
             {/* Page Header */}
@@ -90,8 +216,8 @@ export default function ContactPage() {
                         <span>/</span>
                         <span>Contact</span>
                     </div>
-                    <h1>Contactez-<span className="text-gradient">nous</span></h1>
-                    <p>Une question ? Un projet ? Nous sommes là pour vous accompagner.</p>
+                    <h1>{renderTitle(pageTitle)}</h1>
+                    <p>{pageIntro}</p>
                 </div>
             </header>
 
@@ -101,7 +227,9 @@ export default function ContactPage() {
                     <div className="contact-grid">
                         {/* Contact Form */}
                         <div className="reveal-left">
-                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>Demandez votre <span className="text-gradient">devis gratuit</span></h2>
+                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>
+                                {renderTitle(contactPage?.formTitle || "Demandez votre devis gratuit")}
+                            </h2>
 
                             {status === 'success' ? (
                                 <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
@@ -202,43 +330,45 @@ export default function ContactPage() {
 
                         {/* Contact Info */}
                         <div className="reveal-right">
-                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>Nos <span className="text-gradient">coordonnées</span></h2>
+                            <h2 style={{ marginBottom: 'var(--space-lg)', fontSize: '1.75rem' }}>
+                                {renderTitle(contactPage?.infoTitle || "Nos coordonnées")}
+                            </h2>
 
                             <div className="contact-info">
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">{contactData.address.icon}</div>
+                                    <div className="contact-info-icon">{displayContact.address.icon}</div>
                                     <div className="contact-info-content">
-                                        <h4>{contactData.address.title}</h4>
+                                        <h4>{displayContact.address.title}</h4>
                                         <p>
-                                            {contactData.address.lines.map((line, i) => (
+                                            {Array.isArray(displayContact.address.lines) ? displayContact.address.lines.map((line, i) => (
                                                 <span key={i}>{line}<br /></span>
-                                            ))}
+                                            )) : displayContact.address.lines}
                                         </p>
                                     </div>
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">{contactData.phone.icon}</div>
+                                    <div className="contact-info-icon">{displayContact.phone.icon}</div>
                                     <div className="contact-info-content">
-                                        <h4>{contactData.phone.title}</h4>
-                                        <a href={contactData.phone.link}>{contactData.phone.number}</a>
+                                        <h4>{displayContact.phone.title}</h4>
+                                        <a href={displayContact.phone.link}>{displayContact.phone.number}</a>
                                     </div>
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">{contactData.email.icon}</div>
+                                    <div className="contact-info-icon">{displayContact.email.icon}</div>
                                     <div className="contact-info-content">
-                                        <h4>{contactData.email.title}</h4>
-                                        <p><a href={contactData.email.link}>{contactData.email.address}</a></p>
+                                        <h4>{displayContact.email.title}</h4>
+                                        <p><a href={displayContact.email.link}>{displayContact.email.address}</a></p>
                                     </div>
                                 </div>
 
                                 <div className="contact-info-item">
-                                    <div className="contact-info-icon">{contactData.hours.icon}</div>
+                                    <div className="contact-info-icon">{displayContact.hours.icon}</div>
                                     <div className="contact-info-content">
-                                        <h4>{contactData.hours.title}</h4>
+                                        <h4>{displayContact.hours.title}</h4>
                                         <p>
-                                            {contactData.hours.lines.map((line, i) => (
+                                            {displayContact.hours.lines.map((line, i) => (
                                                 <span key={i}>{line}<br /></span>
                                             ))}
                                         </p>
@@ -250,7 +380,7 @@ export default function ContactPage() {
                             <div style={{ marginTop: 'var(--space-xl)' }}>
                                 <h4 style={{ marginBottom: 'var(--space-md)' }}>Suivez-nous</h4>
                                 <div className="social-links">
-                                    {contactData.socials.map((social, index) => (
+                                    {displayContact.socials.map((social, index) => (
                                         <a
                                             key={index}
                                             href={social.url}
@@ -278,28 +408,33 @@ export default function ContactPage() {
                             </div>
 
                             {/* Reassurance */}
-                            <div className="card" style={{ marginTop: 'var(--space-xl)', background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02))' }}>
-                                <h4 style={{ marginBottom: 'var(--space-sm)' }}>💬 Réponse rapide garantie</h4>
+                            <div className="card" style={{ marginTop: 'var(--space-sm)', background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.02))' }}>
+                                <h4 style={{ marginBottom: 'var(--space-sm)' }}>
+                                    {contactPage?.reassuranceTitle || "💬 Réponse rapide garantie"}
+                                </h4>
                                 <p className="card-text">
-                                    Nous répondons à toutes les demandes sous 24 à 48h.
-                                    Devis personnalisé et accompagnement humain pour votre projet.
+                                    {contactPage?.reassuranceText || "Nous répondons à toutes les demandes sous 24 à 48h. Devis personnalisé et accompagnement humain pour votre projet."}
                                 </p>
                             </div>
+
+                            {/* New Availability Block */}
+                            <AvailabilityBlock />
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Roadmap Section */}
-            <section className="section" style={{ background: 'var(--surface)' }}>
+            < section className="section" style={{ background: 'var(--surface)' }
+            }>
                 <div className="container">
                     <div className="section-header reveal">
                         <span className="subtitle">Organisation</span>
-                        <h2>Votre événement en <span className="text-gradient">4 étapes</span></h2>
+                        <h2>{renderTitle(contactPage?.stepsTitle || "Votre événement en 4 étapes")}</h2>
                     </div>
 
                     <div className="grid grid-4">
-                        {stepsData.map((item, index) => (
+                        {displaySteps.map((item, index) => (
                             <div key={index} className={`roadmap-step reveal stagger-${index + 1}`}>
                                 <div className="step-number">{item.step}</div>
                                 <div className="step-icon">{item.icon}</div>
@@ -309,27 +444,27 @@ export default function ContactPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Map Section */}
-            <section className="section" style={{ paddingTop: 0 }}>
+            < section className="section" style={{ paddingTop: 0 }}>
                 <div className="container">
                     <div className="zone-map reveal">
                         <iframe title="Carte de localisation" src="https://maps.google.com/maps?q=loc:49.1052,-0.7736&z=15&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* FAQ Section */}
-            <section className="section" style={{ background: 'var(--surface)' }}>
+            < section className="section" style={{ background: 'var(--surface)' }}>
                 <div className="container container-sm">
                     <div className="section-header reveal">
                         <span className="subtitle">FAQ</span>
-                        <h2>Questions <span className="text-gradient">fréquentes</span></h2>
+                        <h2>{renderTitle(contactPage?.faqTitle || "Questions fréquentes")}</h2>
                     </div>
 
                     <div className="faq-container reveal">
-                        {faqData.map((item, index) => (
+                        {displayFaq.map((item, index) => (
                             <div key={index} className={`faq-item ${openFaq === index ? 'active' : ''}`}>
                                 <button className="faq-question" onClick={() => toggleFaq(index)}>
                                     {item.q}
@@ -344,7 +479,7 @@ export default function ContactPage() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 }

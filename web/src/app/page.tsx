@@ -1,5 +1,4 @@
 
-
 import Link from 'next/link';
 import Image from 'next/image';
 import MagneticButton from '@/components/ui/MagneticButton';
@@ -57,7 +56,7 @@ async function getHomePageData(): Promise<HomePageData | null> {
       decorExtSection: { populate: 'features' },
       testimonials: true
     },
-  });
+  }, { cache: 'no-store' }); // FORCE NO STORE for debugging
 
   if (!data) return null;
 
@@ -86,7 +85,7 @@ async function getPartners(): Promise<PartnerData[]> {
 
     // Using fetch directly to ensure control over headers and cache
     const res = await fetch(url, {
-      next: { revalidate: 60 }, // ISR Caching: Update at most every 60s
+      cache: 'no-store', // FORCE FRESH DATA
       headers: {
         'Accept': 'application/json'
       }
@@ -244,8 +243,7 @@ export default async function Home() {
   }));
   const partners = [...sanitizedPartnersData, ...fallbackPartners];
 
-  // Debug: Log partners data on server
-  console.log('DEBUG Partners:', JSON.stringify(partners.slice(0, 4), null, 2));
+
 
   return (
     <>
@@ -311,6 +309,7 @@ export default async function Home() {
                       src={imageUrl}
                       alt={event.title}
                       fill
+                      unoptimized // Bypass Next.js optimization for localhost images to avoid "private ip" errors
                       style={{ objectFit: 'cover' }}
                       sizes="(max-width: 768px) 100vw, 25vw"
                     />

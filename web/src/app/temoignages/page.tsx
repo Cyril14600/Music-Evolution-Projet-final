@@ -2,7 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import TestimonialForm from '@/components/TestimonialForm';
 import StatsCounter from '@/components/StatsCounter';
-import { fetchAPI } from '@/lib/api';
+import TestimonialsCarousel from '@/components/TestimonialsCarousel';
+import { fetchAPI, getStrapiMedia } from '@/lib/api';
 
 export const metadata: Metadata = {
     title: 'Témoignages | MusicEvolution14',
@@ -10,41 +11,75 @@ export const metadata: Metadata = {
 };
 
 // Fallback data
+// Fallback data
 const fallbackTestimonials = [
     {
-        name: "Marie & Thomas",
-        eventContext: "Mariage - Juin 2024",
-        content: "Une équipe incroyable ! Notre mariage était parfait grâce à MusicEvolution14. La décoration était à couper le souffle.",
-        rating: 5
+        name: "L'Entreprise Normande",
+        title: "Directeur Général",
+        eventContext: "Soirée Corporate • Septembre 2024",
+        content: "Une équipe incroyable ! Notre soirée d'entreprise était parfaite. L'ambiance était au rendez-vous.",
+        rating: 5,
+        image: "/testimonials/generic-avatar.png"
     },
     {
-        name: "Sophie L.",
-        eventContext: "Anniversaire - Mars 2024",
-        content: "Super prestation pour les 50 ans de mon père. Le DJ a su s'adapter à tous les goûts. Un grand merci !",
-        rating: 5
+        name: "Julie D.",
+        title: "Mariée",
+        eventContext: "Anniversaire 30 ans • Juin 2024",
+        content: "Super prestation pour mes 30 ans. Le DJ a su s'adapter à tous les goûts. Un grand merci !",
+        rating: 5,
+        image: "/testimonials/generic-avatar.png"
     },
     {
         name: "Jean-Pierre M.",
-        eventContext: "Soirée Entreprise - Déc 2023",
-        content: "Professionnels et à l'écoute. Une soirée corporate réussie, tous les collaborateurs ont adoré.",
-        rating: 5
+        title: "Organisateur",
+        eventContext: "Soirée Privée • Déc 2023",
+        content: "Professionnels et à l'écoute. Une soirée réussie, tous les invités ont adoré.",
+        rating: 5,
+        image: "/testimonials/generic-avatar.png"
+    },
+    {
+        name: "Sophie L.",
+        title: "Mariée",
+        eventContext: "Mariage • Août 2024",
+        content: "C'était magique ! Merci pour tout.",
+        rating: 5,
+        image: "/testimonials/generic-avatar.png"
     }
 ];
 
 async function getTestimonials() {
     try {
-        const data = await fetchAPI('/testimonials', { sort: ['createdAt:desc'] });
-        // Strapi v5 data structure handling
-        if (data?.data) {
-            return data.data.map((item: any) => ({
-                id: item.id,
-                ...item.attributes // or item if flattened
-            }));
+        const data = await fetchAPI('/testimonials', { sort: ['createdAt:desc'], populate: '*' });
+        console.log("Fetched Testimonials Data:", data); // Debug log
+
+        if (!data || !data.data) {
+            return [];
         }
+
+        // Handle both Strapi v5 (flat) and v4 (attributes) formats
+        return data.data.map((item: any) => {
+            // If item has 'attributes', it's v4-style or nested. If not, it's v5 flat.
+            const attributes = item.attributes || item;
+            // Process the image URL to be absolute
+            // Handle various Strapi response formats (v4 nested vs v5 flat)
+            const imgData = attributes.image;
+            const imageUrl = imgData?.data?.attributes?.url || imgData?.url || imgData?.data?.url;
+
+            const absoluteImageUrl = imageUrl ? getStrapiMedia(imageUrl) : null;
+
+            return {
+                id: item.id,
+                author: attributes.author,
+                eventContext: attributes.eventContext,
+                content: attributes.content,
+                image: absoluteImageUrl || '/testimonials/generic-avatar.png'
+            };
+        });
+
     } catch (error) {
         console.error("Error fetching testimonials", error);
+        return [];
     }
-    return [];
 }
 
 export default async function Temoignages() {
@@ -58,6 +93,8 @@ export default async function Temoignages() {
 
     return (
         <>
+
+
             <header className="page-header">
                 <div className="container">
                     <div className="breadcrumb">
@@ -86,22 +123,9 @@ export default async function Temoignages() {
                     </div>
                 </div>
 
-                <div className="testimonials-marquee">
-                    <div className="testimonials-track">
-                        {marqueeTestimonials.map((t: any, index: number) => (
-                            <div key={`t-${index}`} className="testimonial-card-marquee">
-                                <div className="testimonial-stars" style={{ fontSize: '1.2rem', marginBottom: 'var(--space-sm)', color: '#ffd700' }}>
-                                    {"★".repeat(t.rating || 5)}
-                                </div>
-                                <p style={{ fontSize: '0.95rem', fontStyle: 'italic', marginBottom: 'var(--space-md)', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                                    "{t.content}"
-                                </p>
-                                <div className="testimonial-author">
-                                    <span style={{ display: 'block', fontWeight: '700', color: 'var(--text-primary)' }}>{t.author || t.name}</span>
-                                    <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--primary-accent)' }}>{t.eventContext}</span>
-                                </div>
-                            </div>
-                        ))}
+                <div className="container">
+                    <div className="px-8 md:px-12"> {/* Add padding for arrows */}
+                        <TestimonialsCarousel testimonials={displayTestimonials} />
                     </div>
                 </div>
             </section>

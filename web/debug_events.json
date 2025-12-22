@@ -1,0 +1,213 @@
+{
+  "data": {
+    "id": 8,
+    "documentId": "ddrvr3x8xuwp5b6jcj6hs8tq",
+    "heroTitle": "#  Créons ensemble\nvos moments inoubliables",
+    "heroSubtitle": "Animation musicale et décoration événementielle sur mesure. Transformez vos rêves en réalité avec MusicEvolution14.",
+    "sectionEventsTitle": "Pour quels événements ?",
+    "sectionEventsSubtitle": "Quel que soit votre événement, nous nous adaptons à vos besoins et à vos envies pour créer une expérience unique.",
+    "createdAt": "2025-12-16T17:00:58.413Z",
+    "updatedAt": "2025-12-18T09:42:29.415Z",
+    "publishedAt": "2025-12-18T09:42:29.448Z",
+    "events": [
+      {
+        "id": 29,
+        "title": "Mariages",
+        "description": "Le plus beau jour de votre vie mérite une ambiance exceptionnelle. Musique romantique et déco de rêve.",
+        "image": {
+          "id": 13,
+          "documentId": "xluuup3fgal008y045e1fz6l",
+          "name": "FB_IMG_1765980150803.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "width": 2048,
+          "height": 1179,
+          "formats": {
+            "thumbnail": {
+              "name": "thumbnail_FB_IMG_1765980150803.jpg",
+              "hash": "thumbnail_FB_IMG_1765980150803_93fd90c80d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 245,
+              "height": 141,
+              "size": 11.6,
+              "sizeInBytes": 11600,
+              "url": "/uploads/thumbnail_FB_IMG_1765980150803_93fd90c80d.jpg"
+            },
+            "small": {
+              "name": "small_FB_IMG_1765980150803.jpg",
+              "hash": "small_FB_IMG_1765980150803_93fd90c80d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 500,
+              "height": 288,
+              "size": 47.23,
+              "sizeInBytes": 47230,
+              "url": "/uploads/small_FB_IMG_1765980150803_93fd90c80d.jpg"
+            },
+            "medium": {
+              "name": "medium_FB_IMG_1765980150803.jpg",
+              "hash": "medium_FB_IMG_1765980150803_93fd90c80d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 750,
+              "height": 432,
+              "size": 110.62,
+              "sizeInBytes": 110620,
+              "url": "/uploads/medium_FB_IMG_1765980150803_93fd90c80d.jpg"
+            },
+            "large": {
+              "name": "large_FB_IMG_1765980150803.jpg",
+              "hash": "large_FB_IMG_1765980150803_93fd90c80d",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "path": null,
+              "width": 1000,
+              "height": 576,
+              "size": 200.08,
+              "sizeInBytes": 200079,
+              "url": "/uploads/large_FB_IMG_1765980150803_93fd90c80d.jpg"
+            }
+          },
+          "hash": "FB_IMG_1765980150803_93fd90c80d",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 611.27,
+          "url": "/uploads/FB_IMG_1765980150803_93fd90c80d.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2025-12-18T09:42:10.939Z",
+          "updatedAt": "2025-12-18T09:42:10.939Z",
+          "publishedAt": "2025-12-18T09:42:10.940Z"
+        }
+      },
+      {
+        "id": 30,
+        "title": "Anniversaires",
+        "description": "Célébrez chaque année avec style ! Décor festif et playlist entraînante pour tous les âges.",
+        "image": null
+      },
+      {
+        "id": 31,
+        "title": "Soirées Privées",
+        "description": "Réunion entre amis, soirée thème ou fête surprise ? Nous créons l'atmosphère parfaite.",
+        "image": null
+      },
+      {
+        "id": 32,
+        "title": "Entreprises",
+        "description": "Séminaires, team building, soirées corporate. Une prestation professionnelle à votre image.",
+        "image": null
+      }
+    ],
+    "animationSection": {
+      "id": 22,
+      "title": "Animation Musicale",
+      "description": "DJ professionnel, sonorisation haute qualité et jeux de lumière spectaculaires. Nous créons l'ambiance parfaite pour faire danser vos invités toute la nuit.",
+      "features": [
+        {
+          "id": 85,
+          "icon": "🎵",
+          "text": "DJ expérimenté"
+        },
+        {
+          "id": 86,
+          "icon": "🔊",
+          "text": "Son professionnel"
+        },
+        {
+          "id": 87,
+          "icon": "💡",
+          "text": "Éclairage dynamique"
+        },
+        {
+          "id": 88,
+          "icon": "🎶",
+          "text": "Playlist personnalisée"
+        }
+      ]
+    },
+    "decorIntSection": {
+      "id": 23,
+      "title": "Décoration Intérieure",
+      "description": "Transformez n'importe quelle salle en un espace féerique. Arrangements floraux, nappes, housses de chaises et créations thématiques.",
+      "features": [
+        {
+          "id": 89,
+          "icon": "✨",
+          "text": "Décor thématique"
+        },
+        {
+          "id": 90,
+          "icon": "🌸",
+          "text": "Centre de tables"
+        },
+        {
+          "id": 91,
+          "icon": "🎀",
+          "text": "Arches décoratives"
+        },
+        {
+          "id": 92,
+          "icon": "🕯️",
+          "text": "Éclairage d'ambiance"
+        }
+      ]
+    },
+    "decorExtSection": {
+      "id": 24,
+      "title": "Décoration Extérieure",
+      "description": "Sublimez vos jardins, terrasses et espaces extérieurs. Guirlandes lumineuses, spots, lanternes et mises en lumière artistiques.",
+      "features": [
+        {
+          "id": 93,
+          "icon": "🌿",
+          "text": "Illuminations"
+        },
+        {
+          "id": 94,
+          "icon": "🌳",
+          "text": "Décor végétal"
+        },
+        {
+          "id": 95,
+          "icon": "🌙",
+          "text": "Ambiance nocturne"
+        },
+        {
+          "id": 96,
+          "icon": "⛺",
+          "text": "Installation complète"
+        }
+      ]
+    },
+    "testimonials": [
+      {
+        "id": 22,
+        "author": "Marie & Thomas",
+        "eventContext": "Mariage - Juin 2024",
+        "content": "Une équipe incroyable ! Notre mariage était parfait grâce à MusicEvolution14. La décoration était à couper le souffle et l'ambiance musicale a fait danser tout le monde jusqu'au bout de la nuit !",
+        "rating": 5
+      },
+      {
+        "id": 23,
+        "author": "Sophie L.",
+        "eventContext": "Anniversaire - Mars 2024",
+        "content": "Super prestation pour les 50 ans de mon père. Le DJ a su s'adapter à tous les goûts et la déco était exactement ce que nous voulions. Un grand merci !",
+        "rating": 5
+      },
+      {
+        "id": 24,
+        "author": "Jean-Pierre M.",
+        "eventContext": "Événement Corporate - Décembre 2023",
+        "content": "Professionnels et à l'écoute. Notre soirée d'entreprise a été un franc succès. Je recommande vivement pour tout type d'événement !",
+        "rating": 5
+      }
+    ]
+  },
+  "meta": {}
+}
